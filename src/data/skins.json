@@ -1,0 +1,12 @@
+[
+  {
+    "id": "classic",
+    "name": "Javali Clássico",
+    "price": 0
+  },
+  {
+    "id": "pixel",
+    "name": "Javali Pixel",
+    "price": 40
+  }
+]

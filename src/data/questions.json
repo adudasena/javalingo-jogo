@@ -1,0 +1,100 @@
+[
+  {
+    "id": 1,
+    "level": "beginner",
+    "q": "O que é uma variável em Java?",
+    "options": [
+      "Um laço de repetição",
+      "Um espaço na memória para armazenar valores",
+      "Um método da classe principal",
+      "Um pacote de bibliotecas"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 2,
+    "level": "beginner",
+    "q": "Qual palavra‑chave declara uma classe?",
+    "options": [
+      "package",
+      "var",
+      "class",
+      "new"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 3,
+    "level": "beginner",
+    "q": "Qual é o tipo inteiro padrão em Java?",
+    "options": [
+      "byte",
+      "int",
+      "long",
+      "short"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 4,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO permite elementos repetidos?",
+    "options": [
+      "List",
+      "Set",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 5,
+    "level": "intermediate",
+    "q": "Qual modificador torna visível apenas no mesmo pacote?",
+    "options": [
+      "private",
+      "public",
+      "protected",
+      "(sem modificador)"
+    ],
+    "answerIndex": 3,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 6,
+    "level": "advanced",
+    "q": "Qual interface funcional representa uma operação que recebe T e retorna R?",
+    "options": [
+      "Supplier",
+      "Consumer",
+      "Function",
+      "Predicate"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 7,
+    "level": "advanced",
+    "q": "Qual palavra‑chave impede herança?",
+    "options": [
+      "final",
+      "static",
+      "const",
+      "sealed"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  }
+]
