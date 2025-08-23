@@ -1,59 +1,74 @@
-import React, { useState } from 'react'
-/*importa react, obrigatório pra jsx e usa 
-hook useState pra estado interno do componente. O useState guarda usuário e senha 
-num storeage (função setState) e navega pra home com useNavigate*/
-
+import React, { useEffect, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-// Importa useNavigate para mudar de rota via código, e Link (que aqui não é usado).
-
 import { setState } from '../lib/storage'
-// Importa uma função utilitária para salvar dados (provavelmente em localStorage).
-// Não é do react
-
 import Mascot from '../components/Mascot'
-// Importa um componente visual do mascote
+
+// "Banco" local (mock) — apenas para demo/estudo
+const USERS_KEY = 'javalingo_users'
+
+// util: carregar/salvar usuários no localStorage
+function loadUsers() {
+  try {
+    const raw = localStorage.getItem(USERS_KEY)
+    return raw ? JSON.parse(raw) : []
+  } catch {
+    return []
+  }
+}
+function saveUsers(list) {
+  localStorage.setItem(USERS_KEY, JSON.stringify(list))
+}
 
 export default function Login(){
-  // Define e exporta o componente de função "Login".
-
   const nav = useNavigate()
-    // Pega a função de navegação do React Router.
-
   const [name, setName] = useState('')
   const [pass, setPass] = useState('')
-  // Cria dois estados controlados: "name" e "pass".
-  // O valor inicial é string vazia. setName/setPass atualizam esses valores.
-  const [err, setErr] = useState('') //Constante de erro
+  const [err, setErr] = useState('')
+
+  // (opcional) semear um usuário demo na 1ª execução
+  useEffect(() => {
+    const users = loadUsers()
+    if (users.length === 0) {
+      users.push({ name: 'demo', email: 'demo@demo', pass: '123456' })
+      saveUsers(users)
+    }
+  }, [])
 
   function handleSubmit(e){
     e.preventDefault()
-  // Impede o comportamento padrão do <form> (recarregar a página).
-      
-    if (!name.trim()) { 
-      setErr('Por favor, informe o usuário!');
-       return 
-      }
-  
-   // Se o nome estiver vazio (ou só espaços), exige.
-   if (!pass) { 
-    setErr('Por favor, informe a senha!'); 
-    return
-   }
-   //Exige senha
+    setErr('')
 
-    setState({ user:{ name, email:`${name}@demo` }, coins:0, xp:0 })
-    // Salva um "estado global" simples do usuário.
-    // Aqui cria um usuário com nome e um e-mail fake (name@demo) e zera moedas/xp.
-    // Isso é um mock de login — não há verificação real de senha.
+    // validações básicas
+    if (!name.trim()) {
+      setErr('Por favor, informe o usuário!')
+      return
+    }
+    if (!pass) {
+      setErr('Por favor, informe a senha!')
+      return
+    }
 
+    // autenticação no "banco" local
+    const users = loadUsers()
+    const user = users.find(u =>
+      u.name.toLowerCase() === name.trim().toLowerCase() && u.pass === pass
+    )
+
+    if (!user) {
+      setErr('Usuário ou senha inválidos. (Dica: usuário "demo", senha "123456")')
+      return
+    }
+
+    // login ok: salva sessão no storage global do app e navega
+    setState({
+      user: { name: user.name, email: user.email },
+      coins: 0,
+      xp: 0
+    })
     nav('/home')
-    // Redireciona para a rota /home.
-
   }
 
   return (
-  // Tudo abaixo é JSX (parece HTML, mas é JS gerando elementos React).
-
     <div className="container">
       <div className="card" style={{maxWidth:420, margin:'20px auto'}}>
         <h1 className="header-title">JavaLingo</h1>
@@ -65,13 +80,39 @@ export default function Login(){
         </div>
 
         <form onSubmit={handleSubmit} className="input-row">
-          {err && <p className="small" style={{color:'crimson',textAlign:'center',marginBottom:8}}>{err}</p>}
-          <input className="input" placeholder="Usuário" value={name} onChange={e=>setName(e.target.value)} />
-          <input className="input" placeholder="Senha" type="password" value={pass} onChange={e=>setPass(e.target.value)} />
-         <button className="btn btn-primary btn-full btn-lg" disabled={!name.trim()}>
-         </button>
-          <p className="small" style={{textAlign:'center'}}>
-          <Link to="/signup">Cadastrar-se</Link>
+          {err && (
+            <p className="small" style={{color:'crimson',textAlign:'center',marginBottom:8}}>
+              {err}
+            </p>
+          )}
+
+          <input
+            className="input"
+            placeholder="Usuário"
+            value={name}
+            onChange={e=>setName(e.target.value)}
+          />
+
+          <input
+            className="input"
+            placeholder="Senha"
+            type="password"
+            value={pass}
+            onChange={e=>setPass(e.target.value)}
+          />
+
+          <button
+            className="btn btn-primary btn-full btn-lg"
+            type="submit"
+            disabled={!name.trim() || !pass}
+          >
+            Entrar
+          </button>
+
+          <p className="small" style={{textAlign:'center', marginTop:10}}>
+            <Link to="/signup" className="btn" style={{display:'inline-block', padding:'6px 10px'}}>
+              Cadastrar-se
+            </Link>
           </p>
         </form>
       </div>
