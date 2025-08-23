@@ -23,15 +23,23 @@ export default function Login(){
   const [pass, setPass] = useState('')
   // Cria dois estados controlados: "name" e "pass".
   // O valor inicial é string vazia. setName/setPass atualizam esses valores.
-
+  const [err, setErr] = useState('') //Constante de erro
 
   function handleSubmit(e){
     e.preventDefault()
   // Impede o comportamento padrão do <form> (recarregar a página).
-
       
-    if(!name.trim()) return
-   // Se o nome estiver vazio (ou só espaços), não faz nada.
+    if (!name.trim()) { 
+      setErr('Por favor, informe o usuário!');
+       return 
+      }
+  
+   // Se o nome estiver vazio (ou só espaços), exige.
+   if (!pass) { 
+    setErr('Por favor, informe a senha!'); 
+    return
+   }
+   //Exige senha
 
     setState({ user:{ name, email:`${name}@demo` }, coins:0, xp:0 })
     // Salva um "estado global" simples do usuário.
@@ -57,10 +65,10 @@ export default function Login(){
         </div>
 
         <form onSubmit={handleSubmit} className="input-row">
+          {err && <p className="small" style={{color:'crimson',textAlign:'center',marginBottom:8}}>{err}</p>}
           <input className="input" placeholder="Usuário" value={name} onChange={e=>setName(e.target.value)} />
           <input className="input" placeholder="Senha" type="password" value={pass} onChange={e=>setPass(e.target.value)} />
          <button className="btn btn-primary btn-full btn-lg" disabled={!name.trim()}>
-         Login
          </button>
           <p className="small" style={{textAlign:'center'}}>
           <Link to="/signup">Cadastrar-se</Link>

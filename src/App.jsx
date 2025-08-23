@@ -7,6 +7,8 @@ import LevelTest from './pages/LevelTest'
 import Quiz from './pages/Quiz'
 import Shop from './pages/Shop'
 import Profile from './pages/Profile'
+import Missions from './pages/Missions'
+import Signup from './pages/Signup'
 import { getState } from './lib/storage'
 
 export default function App(){
@@ -21,6 +23,8 @@ export default function App(){
       <Route path="/quiz" element={<Guard><Quiz /></Guard>} />
       <Route path="/shop" element={<Guard><Shop /></Guard>} />
       <Route path="/profile" element={<Guard><Profile /></Guard>} />
+      <Route path="/missions" element={<Guard><Missions /></Guard>} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>
   )

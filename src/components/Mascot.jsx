@@ -3,7 +3,7 @@ import React from 'react'
 export default function Mascot({ skin = 'classic', size = 120 }) {
   // Escolhe a imagem de acordo com a skin
   const src =
-    skin === 'pixel'
+    skin === 'Ternin'
       ? '/assets/javalingoimagem.png'
       : '/assets/javalingoimagem.png'
 
@@ -18,7 +18,7 @@ export default function Mascot({ skin = 'classic', size = 120 }) {
           objectFit: 'contain'
         }}
       />
-      <p>{skin === 'pixel' ? 'Javali Pixel' : 'Javali Clássico'}</p>
+      <p>{skin === 'Ternin' ? 'Javali De Ternin' : 'Javali Clássico'}</p>
     </div>
   )
 }
