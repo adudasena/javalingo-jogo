@@ -29,7 +29,7 @@ export default function Login(){
   useEffect(() => {
     const users = loadUsers()
     if (users.length === 0) {
-      users.push({ name: 'demo', email: 'demo@demo', pass: '123456' })
+      users.push({ name: 'demo', email: 'demo@unifil', pass: '123456' })
       saveUsers(users)
     }
   }, [])
@@ -55,7 +55,7 @@ export default function Login(){
     )
 
     if (!user) {
-      setErr('Usuário ou senha inválidos. (Dica: usuário "demo", senha "123456")')
+      setErr('Usuário ou senha inválidos!')
       return
     }
 
