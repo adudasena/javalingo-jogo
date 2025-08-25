@@ -1,34 +1,39 @@
-
 import React from "react";
+import { useNavigate } from "react-router-dom";
+import { getProgress } from "../state/progress";
+import { getState } from "../lib/storage";
+
+const TOTAL = 30;
 
 export default function Missions() {
-  // simulação de fases (true = desbloqueado, false = bloqueado)
-  const fases = [
-    { id: 1, unlocked: true },
-    { id: 2, unlocked: false },
-    { id: 3, unlocked: false },
-    { id: 4, unlocked: false },
-    { id: 5, unlocked: false },
-    { id: 6, unlocked: false },
-  ];
+  const nav = useNavigate();
+  const s = getState();
+  const user = s.user?.name || 'demo';
+  const { highestUnlocked, completed } = getProgress(user);
 
   return (
-    <div className="missions-container">
-      <h1>Missões</h1>
-      <div className="missions-grid">
-        {fases.map((fase) => (
-          <div
-            key={fase.id}
-            className={`mission ${fase.unlocked ? "unlocked" : "locked"}`}
-          >
-            {fase.unlocked ? (
-              <span className="emoji">🟢</span>
-            ) : (
-              <span className="emoji">🔒</span>
-            )}
-            <p>Fase {fase.id}</p>
-          </div>
-        ))}
+    <div className="container">
+      <div className="card section-card">
+        <h2>Missões</h2>
+        <p className="small">Conclua níveis para liberar os próximos.</p>
+
+        <div className="levels-grid">
+          {Array.from({ length: TOTAL }, (_, i) => i + 1).map((n) => {
+            const locked = n > highestUnlocked;
+            const done = completed.includes(n);
+            return (
+              <button
+                key={n}
+                className={`level-card ${locked ? "locked" : ""} ${done ? "done" : ""}`}
+                onClick={() => !locked && nav(`/quiz?level=${n}`)}
+                title={locked ? "Complete o nível anterior para liberar" : `Entrar no nível ${n}`}
+              >
+                <div className="level-number">Nível {n}</div>
+                {locked ? <span className="lock">🔒</span> : done ? <span className="check">✓</span> : null}
+              </button>
+            );
+          })}
+        </div>
       </div>
     </div>
   );

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import data from '../data/questions.json'
 import { getState, setState } from '../lib/storage'
 import QuestionCard from '../components/QuestionCard'
+import { completeLevel } from '../state/progress' 
 
 export default function LevelTest(){
   const nav = useNavigate()
@@ -16,12 +17,20 @@ export default function LevelTest(){
     else finish()
   }
 
-  function finish(){
-    const ratio = score / qs.length
-    const level = ratio >= 0.8 ? 'advanced' : ratio >= 0.5 ? 'intermediate' : 'beginner'
-    setState({ level })
-    nav('/home')
+function finish(){
+  const ratio = score / qs.length
+  const level = ratio >= 0.8 ? 'advanced' : ratio >= 0.5 ? 'intermediate' : 'beginner'
+  setState({ level })
+
+  // libera níveis iniciais conforme desempenho do teste
+  // beginner -> libera 1 nível; intermediate -> até nível 3; advanced -> até nível 5
+  const liberarAte = level === 'advanced' ? 5 : level === 'intermediate' ? 3 : 1
+  for (let n = 1; n <= liberarAte; n++) {
+    completeLevel(n) // marca como concluído e libera o próximo
   }
+
+  nav('/home')
+}
 
   return (
     <div className="container">

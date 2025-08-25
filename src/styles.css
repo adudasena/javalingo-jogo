@@ -116,3 +116,90 @@ input:focus, .input:focus, select:focus{ outline-color:var(--ring) }
 .progress{ height:10px; background:rgba(255,255,255,.06);
   border:1px solid rgba(255,255,255,.12); border-radius:999px; overflow:hidden }
 .progress>div{ height:100%; background:#7ed957 }
+
+/*adicionando o do missions*/
+.missions-container {
+  text-align: center;
+  padding: 2rem;
+}
+
+.missions-container h1 {
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.missions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.mission {
+  background: var(--card);
+  border: 2px solid #1f2937;
+  border-radius: 12px;
+  padding: 1rem;
+  width: 100px;
+  transition: transform 0.2s ease;
+}
+
+.mission.unlocked {
+  border-color: var(--accent);
+  cursor: pointer;
+}
+
+.mission.unlocked:hover {
+  transform: scale(1.05);
+}
+
+.mission.locked {
+  opacity: 0.5;
+}
+
+.mission .emoji {
+  font-size: 2rem;
+  display: block;
+}
+
+.mission p {
+  margin: 0.5rem 0 0;
+  font-size: 0.9rem;
+}
+
+/* layout: ocupa a tela toda */
+.page { min-height: 100dvh; display: flex; flex-direction: column; }
+.page-content { flex: 1; }
+
+/* footer */
+.footer {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  padding: 14px 0; text-align: center; opacity: .8;
+}
+.footer .dot { opacity: .6; }
+
+/* aproveita melhor a altura dentro dos cards principais */
+.section-card { min-height: clamp(280px, 60vh, 720px); }
+
+/* grid de níveis */
+.levels-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 14px; margin-top: 14px;
+}
+.level-card {
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.08));
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 16px; padding: 16px; text-align: center;
+  font-weight: 800; cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0,0,0,.20);
+  transition: transform .12s ease;
+}
+.level-card:hover { transform: translateY(-2px); }
+.level-card.locked { filter: grayscale(.9); opacity: .6; cursor: not-allowed; }
+.level-card.done { outline: 2px solid rgba(126, 217, 87, .35); }
+.level-number { margin-bottom: 6px; }
+.lock, .check { font-size: 18px; }
+
+/* intro do teste */
+.intro-list { margin: 10px 0 18px; display: grid; gap: 6px; }
