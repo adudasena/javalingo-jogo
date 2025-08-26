@@ -2,7 +2,7 @@ import React, { useMemo, useState } from 'react'
 import data from '../data/questions.json'
 import QuestionCard from '../components/QuestionCard'
 import { getState, setState } from '../lib/storage'
-import { completeLevel } from '../state/progress'
+import { completeLevel } from '../state/progress.js'
 
 function getQueryLevel() {
   const url = new URL(window.location.href)
@@ -14,37 +14,74 @@ export default function Quiz(){
   const s = getState()
   const currentLevel = getQueryLevel()
 
-  // mantém sua filtragem por level (beginner/intermediate/advanced) se quiser,
-  // mas como agora tem "Nível 1..30", vamos pegar 5 perguntas quaisquer
-  // ou, se você já marca `q.level`, pode mapear currentLevel -> dificuldade aqui.
-  const bank = useMemo(()=> data.slice(0,5), [])
+  // pega as questões da fase atual; se faltar, completa com genéricas (sem levelId)
+  const bank = useMemo(() => {
+    const byLevel = data.filter(q => q.levelId === currentLevel)
+    const fallback = data.filter(q => q.levelId == null)
+    const mix = [...byLevel, ...fallback]
+    return mix.slice(0, 5)
+  }, [currentLevel])
+
   const [idx, setIdx] = useState(0)
   const [done, setDone] = useState(false)
   const [win, setWin] = useState(0)
 
   function onAnswer(i){
     const q = bank[idx]
-    const correct = i === q.answerIndex
-    if(correct){
-      const next = setState({ coins: s.coins + (q.coins ?? 0), xp: s.xp + (q.xp ?? 10) })
+    const wasCorrect = i === q.answerIndex
+
+    // recompensa só quando acerta
+    if(wasCorrect){
+      const next = setState({
+        coins: s.coins + (q.coins ?? 0),
+        xp:    s.xp    + (q.xp    ?? 10)
+      })
       s.coins = next.coins; s.xp = next.xp
-      setWin(w=>w+1)
+      setWin(w => w + 1)
     }
-    if(idx+1 < bank.length) setIdx(idx+1)
-    else {
-      completeLevel(currentLevel)        // marca conclusão e libera o próximo
-      setDone(true)
+
+    const isLast = idx + 1 === bank.length
+    if(!isLast){
+      setIdx(idx + 1)
+      return
     }
+
+    // *** regra de aprovação: 70% ou mais ***
+    // usa wins "finais" considerando a resposta atual
+    const finalWins = wasCorrect ? win + 1 : win
+    const ratio = finalWins / bank.length
+    const aprovado = ratio >= 0.7
+
+    if (aprovado) {
+      completeLevel(currentLevel) // só libera se aprovado
+    }
+    setDone(true)
   }
 
   if(done){
+    const ratio = win / bank.length
+    const aprovado = ratio >= 0.7
+
     return (
       <div className="container">
         <div className="card">
-          <h2>Nível {currentLevel} concluído!</h2>
-          <p>Acertos: {win}/{bank.length}</p>
-          <p className="small">Recompensas aplicadas. Próximo nível liberado 🎉</p>
-          <a className="btn" href="/missions">Voltar às Missões</a>
+          <h2>Nível {currentLevel} {aprovado ? 'concluído!' : 'não concluído'}</h2>
+          <p>Acertos: {win}/{bank.length} ({Math.round(ratio*100)}%)</p>
+
+          {aprovado ? (
+            <>
+              <p className="small">Recompensas aplicadas. Próximo nível liberado 🎉</p>
+              <a className="btn" href="/missions">Voltar às Missões</a>
+            </>
+          ) : (
+            <>
+              <p className="small">É preciso atingir pelo menos 70% para liberar o próximo nível.</p>
+              <div style={{display:'flex', gap:10, flexWrap:'wrap'}}>
+                <a className="btn" href={`/quiz?level=${currentLevel}`}>Tentar novamente</a>
+                <a className="btn btn-ghost" href="/missions">Voltar às Missões</a>
+              </div>
+            </>
+          )}
         </div>
       </div>
     )

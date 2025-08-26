@@ -189,7 +189,7 @@ input:focus, .input:focus, select:focus{ outline-color:var(--ring) }
 }
 .level-card {
   background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(0,0,0,.08));
-  border: 1px solid rgba(255,255,255,.12);
+  border: 1px solid rgba(121, 243, 50, 0.12);
   border-radius: 16px; padding: 16px; text-align: center;
   font-weight: 800; cursor: pointer;
   box-shadow: 0 6px 18px rgba(0,0,0,.20);
