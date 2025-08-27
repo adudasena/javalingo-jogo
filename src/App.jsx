@@ -1,7 +1,7 @@
 import React from 'react'
 import { Routes, Route, Navigate } from 'react-router-dom'
 import Login from './pages/Login'
-import Home from './pages/Home'
+import Home from './pages/Home.jsx'
 import LevelTest from './pages/LevelTest'
 import TestIntro from './pages/TestIntro'      // <<< IMPORT NOVO
 import Quiz from './pages/Quiz'

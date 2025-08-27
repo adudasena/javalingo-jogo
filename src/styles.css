@@ -117,56 +117,6 @@ input:focus, .input:focus, select:focus{ outline-color:var(--ring) }
   border:1px solid rgba(255,255,255,.12); border-radius:999px; overflow:hidden }
 .progress>div{ height:100%; background:#7ed957 }
 
-/*adicionando o do missions*/
-.missions-container {
-  text-align: center;
-  padding: 2rem;
-}
-
-.missions-container h1 {
-  color: var(--accent);
-  margin-bottom: 2rem;
-}
-
-.missions-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
-}
-
-.mission {
-  background: var(--card);
-  border: 2px solid #1f2937;
-  border-radius: 12px;
-  padding: 1rem;
-  width: 100px;
-  transition: transform 0.2s ease;
-}
-
-.mission.unlocked {
-  border-color: var(--accent);
-  cursor: pointer;
-}
-
-.mission.unlocked:hover {
-  transform: scale(1.05);
-}
-
-.mission.locked {
-  opacity: 0.5;
-}
-
-.mission .emoji {
-  font-size: 2rem;
-  display: block;
-}
-
-.mission p {
-  margin: 0.5rem 0 0;
-  font-size: 0.9rem;
-}
-
 /* layout: ocupa a tela toda */
 .page { min-height: 100dvh; display: flex; flex-direction: column; }
 .page-content { flex: 1; }
@@ -203,3 +153,63 @@ input:focus, .input:focus, select:focus{ outline-color:var(--ring) }
 
 /* intro do teste */
 .intro-list { margin: 10px 0 18px; display: grid; gap: 6px; }
+
+/* Quiz visual */
+.quiz-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:12px; }
+.quiz-progress { height:8px; background:rgba(255,255,255,.08); border-radius:999px; overflow:hidden; }
+.quiz-progress > div { height:100%; background:#7ed957; transition:width .35s ease; }
+
+.question-card { animation: fadeUp .35s ease both; }
+.answer-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap:12px; }
+.answer-btn {
+  background:#fff; color:#111; border-radius:14px; padding:14px 16px; font-weight:800; border:none; cursor:pointer;
+  box-shadow:0 8px 18px rgba(0,0,0,.2); transform:translateY(0); transition: transform .08s ease, box-shadow .2s ease;
+}
+.answer-btn:hover { transform: translateY(-2px); box-shadow:0 12px 24px rgba(0,0,0,.25); }
+.answer-btn:active { transform: translateY(0); }
+.answer-btn.correct { outline:3px solid rgba(126,217,87,.7); animation: pulse .45s ease; }
+.answer-btn.wrong   { outline:3px solid rgba(239,68,68,.8); }
+
+@keyframes fadeUp { from { opacity:0; transform: translateY(8px); } to { opacity:1; transform: translateY(0); } }
+@keyframes pulse   { from { transform: scale(1); } 50% { transform: scale(1.03);} to { transform: scale(1);} }
+
+/* Login com flutuação sutil */
+.login-card { position:relative; animation: floaty 6s ease-in-out infinite; }
+@keyframes floaty { 0%,100%{ transform: translateY(0);} 50%{ transform: translateY(-6px);} }
+
+/* links estilo botão (Home) – força contra :visited e sublinhado */
+a.link-btn,
+a.link-btn:link,
+a.link-btn:visited,
+a.link-btn:hover,
+a.link-btn:active,
+a.link-btn:focus {
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:800;
+  text-decoration:none !important;
+  color:#fff !important;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+}
+a.link-btn:hover { filter:brightness(1.05); }
+a.link-btn:active { transform:translateY(1px); }
+
+/* Fallback: estiliza os <a class="btn ..."> da seção de links da Home */
+.card .row a.btn,
+.card .row a.btn.secondary,
+.card .row a.btn:link,
+.card .row a.btn:visited {
+  display:inline-block;
+  padding:10px 14px;
+  border-radius:10px;
+  font-weight:800;
+  text-decoration:none !important;
+  color:#fff !important;
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:none;
+}
+.card .row a.btn:hover { filter:brightness(1.05); text-decoration:none; }
+.card .row a.btn:active { transform:translateY(1px); }
