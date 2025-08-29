@@ -11,7 +11,7 @@ export default function Home(){
       <div className="nav">
         <Link to="/home">Início</Link>
         <Link to="/leveltest">Teste</Link>
-        <Link to="/quiz">Jogar</Link>
+        <Link to="/Missions">Jogar</Link>
         <Link to="/shop">Loja</Link>
         <Link to="/profile">Perfil</Link>
       </div>
@@ -27,7 +27,7 @@ export default function Home(){
         <hr/>
         <div className="row">
           <Link className="btn" to="/leveltest">Fazer teste de nivelamento</Link>
-          <Link className="btn secondary" to="/quiz">Jogar 1ª fase</Link>
+          <Link className="btn secondary" to="/Missions">Jogar 1ª fase</Link>
           <Link className="btn secondary" to="/shop">Abrir loja</Link>
           <Link className="btn secondary" to="/profile">Ver perfil</Link>
         </div>
