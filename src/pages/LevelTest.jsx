@@ -5,6 +5,7 @@ import { getState, setState } from "../lib/storage";
 import QuestionCard from "../components/QuestionCard";
 import { completeLevel } from "../state/progress.js";
 
+
 export default function LevelTest() {
   const nav = useNavigate();
   const qs = useMemo(() => data.slice(0, 5), []);

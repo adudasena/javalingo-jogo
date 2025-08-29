@@ -2,6 +2,8 @@ import React from 'react'
 import { getState, reset, setState } from '../lib/storage'
 import ProgressBar from '../components/ProgressBar'
 import Mascot from '../components/Mascot'
+import { levelToLabel } from '../state/levels'
+
 
 export default function Profile(){
   const s = getState()
@@ -9,7 +11,6 @@ export default function Profile(){
   const pct = Math.min(100, Math.round((s.xp % xpToNext) / xpToNext * 100))
 
   function simulateProgress(){
-    // pequena simulação para o vídeo (mostra barra andando)
     setState({ xp: s.xp + 15 })
     location.reload()
   }
@@ -22,7 +23,7 @@ export default function Profile(){
           <Mascot skin={s.activeSkin} />
           <div>
             <p><b>{s.user?.name || 'Aluno(a)'}</b></p>
-            <p className="small">Nível: {s.level || 'Indefinido'} | XP: {s.xp}</p>
+            <p className="small">Nível: {levelToLabel(s.level)} | XP: {s.xp}</p>
             <ProgressBar value={pct} />
             <p className="small">Progresso até o próximo nível (simulado): {pct}%</p>
           </div>

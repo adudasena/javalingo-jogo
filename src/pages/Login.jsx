@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { setState } from '../lib/storage'
 import Mascot from '../components/Mascot'
+import BackgroundFX from '../components/BackgroundFX'
 
 // "Banco" local (mock) — apenas para demo/estudo
 const USERS_KEY = 'javalingo_users'
@@ -69,52 +70,57 @@ export default function Login(){
   }
 
   return (
-    <div className="container">
-      <div className="card" style={{maxWidth:420, margin:'20px auto'}}>
-        <h1 className="header-title">JavaLingo</h1>
+    <div className="page login-page">
+      {/* Fundo animado especial para login */}
+      <BackgroundFX variant="login" />
 
-        <div style={{display:'grid',placeItems:'center',margin:'14px 0 18px'}}>
-          <div className="avatar">
-            <Mascot skin="classic" size={160}/>
+      <div className="container">
+        <div className="card login-card" style={{maxWidth:420, margin:'40px auto'}}>
+          <h1 className="header-title" style={{textAlign:'center'}}>JavaLingo</h1>
+
+          <div style={{display:'grid',placeItems:'center',margin:'18px 0 22px'}}>
+            <div className="avatar">
+              <Mascot skin="classic" size={160}/>
+            </div>
           </div>
-        </div>
 
-        <form onSubmit={handleSubmit} className="input-row">
-          {err && (
-            <p className="small" style={{color:'crimson',textAlign:'center',marginBottom:8}}>
-              {err}
+          <form onSubmit={handleSubmit} className="input-row">
+            {err && (
+              <p className="small" style={{color:'crimson',textAlign:'center',marginBottom:8}}>
+                {err}
+              </p>
+            )}
+
+            <input
+              className="input"
+              placeholder="Usuário"
+              value={name}
+              onChange={e=>setName(e.target.value)}
+            />
+
+            <input
+              className="input"
+              placeholder="Senha"
+              type="password"
+              value={pass}
+              onChange={e=>setPass(e.target.value)}
+            />
+
+            <button
+              className="btn btn-accent btn-full btn-lg"
+              type="submit"
+              disabled={!name.trim() || !pass}
+            >
+              Entrar
+            </button>
+
+            <p className="small" style={{textAlign:'center', marginTop:10}}>
+              <Link to="/signup" className="btn btn-ghost" style={{display:'inline-block', padding:'6px 10px'}}>
+                Cadastrar-se
+              </Link>
             </p>
-          )}
-
-          <input
-            className="input"
-            placeholder="Usuário"
-            value={name}
-            onChange={e=>setName(e.target.value)}
-          />
-
-          <input
-            className="input"
-            placeholder="Senha"
-            type="password"
-            value={pass}
-            onChange={e=>setPass(e.target.value)}
-          />
-
-          <button
-            className="btn btn-primary btn-full btn-lg"
-            type="submit"
-            disabled={!name.trim() || !pass}
-          >
-            Entrar
-          </button>
-
-          <p className="small" style={{textAlign:'center', marginTop:10}}>
-            <Link to="/signup" className="btn" style={{display:'inline-block', padding:'6px 10px'}}>
-              Cadastrar-se
-            </Link>
-          </p>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
   )
