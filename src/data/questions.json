@@ -1,50 +1,849 @@
 [
   {
     "id": 1,
+    "levelId": 1,
     "level": "beginner",
-    "q": "O que é uma variável em Java?",
+    "q": "Qual estrutura representa decisão em lógica?",
     "options": [
-      "Um laço de repetição",
-      "Um espaço na memória para armazenar valores",
-      "Um método da classe principal",
-      "Um pacote de bibliotecas"
-    ],
-    "answerIndex": 1,
-    "xp": 10,
-    "coins": 5
-  },
-  {
-    "id": 2,
-    "level": "beginner",
-    "q": "Qual palavra‑chave declara uma classe?",
-    "options": [
-      "package",
-      "var",
-      "class",
-      "new"
+      "para",
+      "repita",
+      "se",
+      "caso"
     ],
     "answerIndex": 2,
     "xp": 10,
     "coins": 5
   },
   {
-    "id": 3,
+    "id": 1,
+    "levelId": 1,
     "level": "beginner",
-    "q": "Qual é o tipo inteiro padrão em Java?",
+    "q": "O que é algoritmo?",
     "options": [
-      "byte",
-      "int",
-      "long",
-      "short"
+      "Linguagem",
+      "Erro",
+      "Passos para resolver",
+      "Comando único"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 1,
+    "levelId": 1,
+    "level": "beginner",
+    "q": "Qual é o valor da variável após: x = 2 + 3 * 4?",
+    "options": [
+      "14",
+      "20",
+      "24",
+      "10"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 1,
+    "levelId": 1,
+    "level": "beginner",
+    "q": "Qual linguagem é usada no Portugol Studio?",
+    "options": [
+      "Python",
+      "C",
+      "Portugol",
+      "Scratch"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 1,
+    "levelId": 1,
+    "level": "beginner",
+    "q": "Qual é a sintaxe correta para atribuição?",
+    "options": [
+      "a == 5",
+      "a := 5",
+      "a = 5",
+      "a <- 5"
+    ],
+    "answerIndex": 3,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 6,
+    "levelId": 2,
+    "level": "beginner",
+    "q": "O que é uma variável?",
+    "options": [
+      "Espaço na memória",
+      "Loop",
+      "Função",
+      "Classe"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 6,
+    "levelId": 2,
+    "level": "beginner",
+    "q": "Qual tipo representa números inteiros?",
+    "options": [
+      "real",
+      "literal",
+      "inteiro",
+      "lógico"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 6,
+    "levelId": 2,
+    "level": "beginner",
+    "q": "Qual é o operador de igualdade em lógica/Java?",
+    "options": [
+      "==",
+      "=",
+      "!=",
+      "<>"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 6,
+    "levelId": 2,
+    "level": "beginner",
+    "q": "Como se representa um laço de repetição?",
+    "options": [
+      "se",
+      "enquanto",
+      "classe",
+      "imprima"
     ],
     "answerIndex": 1,
     "xp": 10,
     "coins": 5
   },
   {
-    "id": 4,
+    "id": 6,
+    "levelId": 2,
+    "level": "beginner",
+    "q": "O que é algoritmo?",
+    "options": [
+      "Linguagem",
+      "Erro",
+      "Passos para resolver",
+      "Comando único"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 11,
+    "levelId": 3,
+    "level": "beginner",
+    "q": "Qual estrutura representa decisão em lógica?",
+    "options": [
+      "para",
+      "repita",
+      "se",
+      "caso"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 11,
+    "levelId": 3,
+    "level": "beginner",
+    "q": "Qual linguagem é usada no Portugol Studio?",
+    "options": [
+      "Python",
+      "C",
+      "Portugol",
+      "Scratch"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 11,
+    "levelId": 3,
+    "level": "beginner",
+    "q": "Qual é a sintaxe correta para atribuição?",
+    "options": [
+      "a == 5",
+      "a := 5",
+      "a = 5",
+      "a <- 5"
+    ],
+    "answerIndex": 3,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 11,
+    "levelId": 3,
+    "level": "beginner",
+    "q": "Qual tipo representa números inteiros?",
+    "options": [
+      "real",
+      "literal",
+      "inteiro",
+      "lógico"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 11,
+    "levelId": 3,
+    "level": "beginner",
+    "q": "Qual é o valor da variável após: x = 2 + 3 * 4?",
+    "options": [
+      "14",
+      "20",
+      "24",
+      "10"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 16,
+    "levelId": 4,
+    "level": "beginner",
+    "q": "Como se representa um laço de repetição?",
+    "options": [
+      "se",
+      "enquanto",
+      "classe",
+      "imprima"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 16,
+    "levelId": 4,
+    "level": "beginner",
+    "q": "Qual é o operador de igualdade em lógica/Java?",
+    "options": [
+      "==",
+      "=",
+      "!=",
+      "<>"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 16,
+    "levelId": 4,
+    "level": "beginner",
+    "q": "Qual linguagem é usada no Portugol Studio?",
+    "options": [
+      "Python",
+      "C",
+      "Portugol",
+      "Scratch"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 16,
+    "levelId": 4,
+    "level": "beginner",
+    "q": "O que é uma variável?",
+    "options": [
+      "Espaço na memória",
+      "Loop",
+      "Função",
+      "Classe"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 16,
+    "levelId": 4,
+    "level": "beginner",
+    "q": "Qual comando imprime no Portugol?",
+    "options": [
+      "leia",
+      "escreva",
+      "imprima",
+      "echo"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 21,
+    "levelId": 5,
+    "level": "beginner",
+    "q": "O que é uma variável?",
+    "options": [
+      "Espaço na memória",
+      "Loop",
+      "Função",
+      "Classe"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 21,
+    "levelId": 5,
+    "level": "beginner",
+    "q": "Como se representa um laço de repetição?",
+    "options": [
+      "se",
+      "enquanto",
+      "classe",
+      "imprima"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 21,
+    "levelId": 5,
+    "level": "beginner",
+    "q": "Qual estrutura representa decisão em lógica?",
+    "options": [
+      "para",
+      "repita",
+      "se",
+      "caso"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 21,
+    "levelId": 5,
+    "level": "beginner",
+    "q": "Qual é o valor da variável após: x = 2 + 3 * 4?",
+    "options": [
+      "14",
+      "20",
+      "24",
+      "10"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 21,
+    "levelId": 5,
+    "level": "beginner",
+    "q": "Qual tipo representa números inteiros?",
+    "options": [
+      "real",
+      "literal",
+      "inteiro",
+      "lógico"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 26,
+    "levelId": 6,
+    "level": "beginner",
+    "q": "Como se representa um laço de repetição?",
+    "options": [
+      "se",
+      "enquanto",
+      "classe",
+      "imprima"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 26,
+    "levelId": 6,
+    "level": "beginner",
+    "q": "Qual é o operador de igualdade em lógica/Java?",
+    "options": [
+      "==",
+      "=",
+      "!=",
+      "<>"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 26,
+    "levelId": 6,
+    "level": "beginner",
+    "q": "Qual linguagem é usada no Portugol Studio?",
+    "options": [
+      "Python",
+      "C",
+      "Portugol",
+      "Scratch"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 26,
+    "levelId": 6,
+    "level": "beginner",
+    "q": "Qual comando imprime no Portugol?",
+    "options": [
+      "leia",
+      "escreva",
+      "imprima",
+      "echo"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 26,
+    "levelId": 6,
+    "level": "beginner",
+    "q": "Qual estrutura representa decisão em lógica?",
+    "options": [
+      "para",
+      "repita",
+      "se",
+      "caso"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 31,
+    "levelId": 7,
+    "level": "beginner",
+    "q": "Qual tipo representa números inteiros?",
+    "options": [
+      "real",
+      "literal",
+      "inteiro",
+      "lógico"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 31,
+    "levelId": 7,
+    "level": "beginner",
+    "q": "O que é uma variável?",
+    "options": [
+      "Espaço na memória",
+      "Loop",
+      "Função",
+      "Classe"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 31,
+    "levelId": 7,
+    "level": "beginner",
+    "q": "Qual é a sintaxe correta para atribuição?",
+    "options": [
+      "a == 5",
+      "a := 5",
+      "a = 5",
+      "a <- 5"
+    ],
+    "answerIndex": 3,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 31,
+    "levelId": 7,
+    "level": "beginner",
+    "q": "Qual comando imprime no Portugol?",
+    "options": [
+      "leia",
+      "escreva",
+      "imprima",
+      "echo"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 31,
+    "levelId": 7,
+    "level": "beginner",
+    "q": "Como se representa um laço de repetição?",
+    "options": [
+      "se",
+      "enquanto",
+      "classe",
+      "imprima"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 36,
+    "levelId": 8,
+    "level": "beginner",
+    "q": "Qual linguagem é usada no Portugol Studio?",
+    "options": [
+      "Python",
+      "C",
+      "Portugol",
+      "Scratch"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 36,
+    "levelId": 8,
+    "level": "beginner",
+    "q": "Qual é o operador de igualdade em lógica/Java?",
+    "options": [
+      "==",
+      "=",
+      "!=",
+      "<>"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 36,
+    "levelId": 8,
+    "level": "beginner",
+    "q": "Qual é a sintaxe correta para atribuição?",
+    "options": [
+      "a == 5",
+      "a := 5",
+      "a = 5",
+      "a <- 5"
+    ],
+    "answerIndex": 3,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 36,
+    "levelId": 8,
+    "level": "beginner",
+    "q": "Qual é o valor da variável após: x = 2 + 3 * 4?",
+    "options": [
+      "14",
+      "20",
+      "24",
+      "10"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 36,
+    "levelId": 8,
+    "level": "beginner",
+    "q": "Como se representa um laço de repetição?",
+    "options": [
+      "se",
+      "enquanto",
+      "classe",
+      "imprima"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 41,
+    "levelId": 9,
+    "level": "beginner",
+    "q": "Qual comando imprime no Portugol?",
+    "options": [
+      "leia",
+      "escreva",
+      "imprima",
+      "echo"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 41,
+    "levelId": 9,
+    "level": "beginner",
+    "q": "Qual tipo representa números inteiros?",
+    "options": [
+      "real",
+      "literal",
+      "inteiro",
+      "lógico"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 41,
+    "levelId": 9,
+    "level": "beginner",
+    "q": "Qual é a sintaxe correta para atribuição?",
+    "options": [
+      "a == 5",
+      "a := 5",
+      "a = 5",
+      "a <- 5"
+    ],
+    "answerIndex": 3,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 41,
+    "levelId": 9,
+    "level": "beginner",
+    "q": "Qual é o valor da variável após: x = 2 + 3 * 4?",
+    "options": [
+      "14",
+      "20",
+      "24",
+      "10"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 41,
+    "levelId": 9,
+    "level": "beginner",
+    "q": "Qual estrutura representa decisão em lógica?",
+    "options": [
+      "para",
+      "repita",
+      "se",
+      "caso"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 46,
+    "levelId": 10,
+    "level": "beginner",
+    "q": "Como se representa um laço de repetição?",
+    "options": [
+      "se",
+      "enquanto",
+      "classe",
+      "imprima"
+    ],
+    "answerIndex": 1,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 46,
+    "levelId": 10,
+    "level": "beginner",
+    "q": "Qual é o operador de igualdade em lógica/Java?",
+    "options": [
+      "==",
+      "=",
+      "!=",
+      "<>"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 46,
+    "levelId": 10,
+    "level": "beginner",
+    "q": "Qual tipo representa números inteiros?",
+    "options": [
+      "real",
+      "literal",
+      "inteiro",
+      "lógico"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 46,
+    "levelId": 10,
+    "level": "beginner",
+    "q": "Qual é o valor da variável após: x = 2 + 3 * 4?",
+    "options": [
+      "14",
+      "20",
+      "24",
+      "10"
+    ],
+    "answerIndex": 0,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 46,
+    "levelId": 10,
+    "level": "beginner",
+    "q": "Qual estrutura representa decisão em lógica?",
+    "options": [
+      "para",
+      "repita",
+      "se",
+      "caso"
+    ],
+    "answerIndex": 2,
+    "xp": 10,
+    "coins": 5
+  },
+  {
+    "id": 51,
+    "levelId": 11,
     "level": "intermediate",
-    "q": "Qual coleção NÃO permite elementos repetidos?",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
+    "options": [
+      "5",
+      "6",
+      "Erro",
+      "x"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 51,
+    "levelId": 11,
+    "level": "intermediate",
+    "q": "Como se cria um objeto?",
+    "options": [
+      "class A = new A();",
+      "A a = new A();",
+      "A = objeto();",
+      "obj = A.new();"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 51,
+    "levelId": 11,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 51,
+    "levelId": 11,
+    "level": "intermediate",
+    "q": "Qual classe é usada para entrada de dados?",
+    "options": [
+      "Scanner",
+      "Input",
+      "Reader",
+      "Buffer"
+    ],
+    "answerIndex": 0,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 51,
+    "levelId": 11,
+    "level": "intermediate",
+    "q": "Qual é o tipo para valores verdadeiros/falsos?",
+    "options": [
+      "int",
+      "String",
+      "boolean",
+      "float"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 56,
+    "levelId": 12,
+    "level": "intermediate",
+    "q": "O que o operador '!=' significa?",
+    "options": [
+      "Igual",
+      "Menor que",
+      "Diferente",
+      "Maior que"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 56,
+    "levelId": 12,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO aceita duplicados?",
     "options": [
       "List",
       "Set",
@@ -56,44 +855,2897 @@
     "coins": 7
   },
   {
-    "id": 5,
+    "id": 56,
+    "levelId": 12,
     "level": "intermediate",
-    "q": "Qual modificador torna visível apenas no mesmo pacote?",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
     "options": [
-      "private",
-      "public",
-      "protected",
-      "(sem modificador)"
+      "5",
+      "6",
+      "Erro",
+      "x"
     ],
-    "answerIndex": 3,
+    "answerIndex": 1,
     "xp": 15,
     "coins": 7
   },
   {
-    "id": 6,
-    "level": "advanced",
-    "q": "Qual interface funcional representa uma operação que recebe T e retorna R?",
+    "id": 56,
+    "levelId": 12,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
     "options": [
-      "Supplier",
-      "Consumer",
-      "Function",
-      "Predicate"
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 56,
+    "levelId": 12,
+    "level": "intermediate",
+    "q": "Como se cria um objeto?",
+    "options": [
+      "class A = new A();",
+      "A a = new A();",
+      "A = objeto();",
+      "obj = A.new();"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 61,
+    "levelId": 13,
+    "level": "intermediate",
+    "q": "Como se cria um objeto?",
+    "options": [
+      "class A = new A();",
+      "A a = new A();",
+      "A = objeto();",
+      "obj = A.new();"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 61,
+    "levelId": 13,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 61,
+    "levelId": 13,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 61,
+    "levelId": 13,
+    "level": "intermediate",
+    "q": "Qual método inicia um programa Java?",
+    "options": [
+      "start()",
+      "run()",
+      "main()",
+      "init()"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 61,
+    "levelId": 13,
+    "level": "intermediate",
+    "q": "Qual classe é usada para entrada de dados?",
+    "options": [
+      "Scanner",
+      "Input",
+      "Reader",
+      "Buffer"
+    ],
+    "answerIndex": 0,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 66,
+    "levelId": 14,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO aceita duplicados?",
+    "options": [
+      "List",
+      "Set",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 66,
+    "levelId": 14,
+    "level": "intermediate",
+    "q": "O que o operador '!=' significa?",
+    "options": [
+      "Igual",
+      "Menor que",
+      "Diferente",
+      "Maior que"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 66,
+    "levelId": 14,
+    "level": "intermediate",
+    "q": "Qual método inicia um programa Java?",
+    "options": [
+      "start()",
+      "run()",
+      "main()",
+      "init()"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 66,
+    "levelId": 14,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 66,
+    "levelId": 14,
+    "level": "intermediate",
+    "q": "Qual palavra-chave define herança?",
+    "options": [
+      "this",
+      "extends",
+      "implements",
+      "override"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 71,
+    "levelId": 15,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 71,
+    "levelId": 15,
+    "level": "intermediate",
+    "q": "Como se cria um objeto?",
+    "options": [
+      "class A = new A();",
+      "A a = new A();",
+      "A = objeto();",
+      "obj = A.new();"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 71,
+    "levelId": 15,
+    "level": "intermediate",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
+    "options": [
+      "5",
+      "6",
+      "Erro",
+      "x"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 71,
+    "levelId": 15,
+    "level": "intermediate",
+    "q": "Qual palavra-chave define herança?",
+    "options": [
+      "this",
+      "extends",
+      "implements",
+      "override"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 71,
+    "levelId": 15,
+    "level": "intermediate",
+    "q": "Qual método inicia um programa Java?",
+    "options": [
+      "start()",
+      "run()",
+      "main()",
+      "init()"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 76,
+    "levelId": 16,
+    "level": "intermediate",
+    "q": "Qual método inicia um programa Java?",
+    "options": [
+      "start()",
+      "run()",
+      "main()",
+      "init()"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 76,
+    "levelId": 16,
+    "level": "intermediate",
+    "q": "Qual palavra-chave define herança?",
+    "options": [
+      "this",
+      "extends",
+      "implements",
+      "override"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 76,
+    "levelId": 16,
+    "level": "intermediate",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
+    "options": [
+      "5",
+      "6",
+      "Erro",
+      "x"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 76,
+    "levelId": 16,
+    "level": "intermediate",
+    "q": "Qual classe é usada para entrada de dados?",
+    "options": [
+      "Scanner",
+      "Input",
+      "Reader",
+      "Buffer"
+    ],
+    "answerIndex": 0,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 76,
+    "levelId": 16,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO aceita duplicados?",
+    "options": [
+      "List",
+      "Set",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 81,
+    "levelId": 17,
+    "level": "intermediate",
+    "q": "Como se cria um objeto?",
+    "options": [
+      "class A = new A();",
+      "A a = new A();",
+      "A = objeto();",
+      "obj = A.new();"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 81,
+    "levelId": 17,
+    "level": "intermediate",
+    "q": "Qual é o tipo para valores verdadeiros/falsos?",
+    "options": [
+      "int",
+      "String",
+      "boolean",
+      "float"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 81,
+    "levelId": 17,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 81,
+    "levelId": 17,
+    "level": "intermediate",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
+    "options": [
+      "5",
+      "6",
+      "Erro",
+      "x"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 81,
+    "levelId": 17,
+    "level": "intermediate",
+    "q": "O que o operador '!=' significa?",
+    "options": [
+      "Igual",
+      "Menor que",
+      "Diferente",
+      "Maior que"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 86,
+    "levelId": 18,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO aceita duplicados?",
+    "options": [
+      "List",
+      "Set",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 86,
+    "levelId": 18,
+    "level": "intermediate",
+    "q": "Qual método inicia um programa Java?",
+    "options": [
+      "start()",
+      "run()",
+      "main()",
+      "init()"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 86,
+    "levelId": 18,
+    "level": "intermediate",
+    "q": "Qual palavra-chave define herança?",
+    "options": [
+      "this",
+      "extends",
+      "implements",
+      "override"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 86,
+    "levelId": 18,
+    "level": "intermediate",
+    "q": "Qual é o tipo para valores verdadeiros/falsos?",
+    "options": [
+      "int",
+      "String",
+      "boolean",
+      "float"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 86,
+    "levelId": 18,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 91,
+    "levelId": 19,
+    "level": "intermediate",
+    "q": "Qual método inicia um programa Java?",
+    "options": [
+      "start()",
+      "run()",
+      "main()",
+      "init()"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 91,
+    "levelId": 19,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO aceita duplicados?",
+    "options": [
+      "List",
+      "Set",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 91,
+    "levelId": 19,
+    "level": "intermediate",
+    "q": "Qual classe é usada para entrada de dados?",
+    "options": [
+      "Scanner",
+      "Input",
+      "Reader",
+      "Buffer"
+    ],
+    "answerIndex": 0,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 91,
+    "levelId": 19,
+    "level": "intermediate",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
+    "options": [
+      "5",
+      "6",
+      "Erro",
+      "x"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 91,
+    "levelId": 19,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 96,
+    "levelId": 20,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO aceita duplicados?",
+    "options": [
+      "List",
+      "Set",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 96,
+    "levelId": 20,
+    "level": "intermediate",
+    "q": "Qual é o tipo para valores verdadeiros/falsos?",
+    "options": [
+      "int",
+      "String",
+      "boolean",
+      "float"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 96,
+    "levelId": 20,
+    "level": "intermediate",
+    "q": "Qual método inicia um programa Java?",
+    "options": [
+      "start()",
+      "run()",
+      "main()",
+      "init()"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 96,
+    "levelId": 20,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 96,
+    "levelId": 20,
+    "level": "intermediate",
+    "q": "O que o operador '!=' significa?",
+    "options": [
+      "Igual",
+      "Menor que",
+      "Diferente",
+      "Maior que"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 101,
+    "levelId": 21,
+    "level": "intermediate",
+    "q": "O que o operador '!=' significa?",
+    "options": [
+      "Igual",
+      "Menor que",
+      "Diferente",
+      "Maior que"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 101,
+    "levelId": 21,
+    "level": "intermediate",
+    "q": "Como se cria um objeto?",
+    "options": [
+      "class A = new A();",
+      "A a = new A();",
+      "A = objeto();",
+      "obj = A.new();"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 101,
+    "levelId": 21,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 101,
+    "levelId": 21,
+    "level": "intermediate",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
+    "options": [
+      "5",
+      "6",
+      "Erro",
+      "x"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 101,
+    "levelId": 21,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 106,
+    "levelId": 22,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 106,
+    "levelId": 22,
+    "level": "intermediate",
+    "q": "O que o operador '!=' significa?",
+    "options": [
+      "Igual",
+      "Menor que",
+      "Diferente",
+      "Maior que"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 106,
+    "levelId": 22,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO aceita duplicados?",
+    "options": [
+      "List",
+      "Set",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 106,
+    "levelId": 22,
+    "level": "intermediate",
+    "q": "Qual classe é usada para entrada de dados?",
+    "options": [
+      "Scanner",
+      "Input",
+      "Reader",
+      "Buffer"
+    ],
+    "answerIndex": 0,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 106,
+    "levelId": 22,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 111,
+    "levelId": 23,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO aceita duplicados?",
+    "options": [
+      "List",
+      "Set",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 111,
+    "levelId": 23,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 111,
+    "levelId": 23,
+    "level": "intermediate",
+    "q": "Qual classe é usada para entrada de dados?",
+    "options": [
+      "Scanner",
+      "Input",
+      "Reader",
+      "Buffer"
+    ],
+    "answerIndex": 0,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 111,
+    "levelId": 23,
+    "level": "intermediate",
+    "q": "O que o operador '!=' significa?",
+    "options": [
+      "Igual",
+      "Menor que",
+      "Diferente",
+      "Maior que"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 111,
+    "levelId": 23,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 116,
+    "levelId": 24,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 116,
+    "levelId": 24,
+    "level": "intermediate",
+    "q": "Qual palavra-chave define herança?",
+    "options": [
+      "this",
+      "extends",
+      "implements",
+      "override"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 116,
+    "levelId": 24,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 116,
+    "levelId": 24,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO aceita duplicados?",
+    "options": [
+      "List",
+      "Set",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 116,
+    "levelId": 24,
+    "level": "intermediate",
+    "q": "Qual classe é usada para entrada de dados?",
+    "options": [
+      "Scanner",
+      "Input",
+      "Reader",
+      "Buffer"
+    ],
+    "answerIndex": 0,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 121,
+    "levelId": 25,
+    "level": "intermediate",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
+    "options": [
+      "5",
+      "6",
+      "Erro",
+      "x"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 121,
+    "levelId": 25,
+    "level": "intermediate",
+    "q": "Qual palavra-chave define herança?",
+    "options": [
+      "this",
+      "extends",
+      "implements",
+      "override"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 121,
+    "levelId": 25,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO aceita duplicados?",
+    "options": [
+      "List",
+      "Set",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 121,
+    "levelId": 25,
+    "level": "intermediate",
+    "q": "Qual classe é usada para entrada de dados?",
+    "options": [
+      "Scanner",
+      "Input",
+      "Reader",
+      "Buffer"
+    ],
+    "answerIndex": 0,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 121,
+    "levelId": 25,
+    "level": "intermediate",
+    "q": "O que o operador '!=' significa?",
+    "options": [
+      "Igual",
+      "Menor que",
+      "Diferente",
+      "Maior que"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 126,
+    "levelId": 26,
+    "level": "intermediate",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
+    "options": [
+      "5",
+      "6",
+      "Erro",
+      "x"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 126,
+    "levelId": 26,
+    "level": "intermediate",
+    "q": "Qual classe é usada para entrada de dados?",
+    "options": [
+      "Scanner",
+      "Input",
+      "Reader",
+      "Buffer"
+    ],
+    "answerIndex": 0,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 126,
+    "levelId": 26,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 126,
+    "levelId": 26,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 126,
+    "levelId": 26,
+    "level": "intermediate",
+    "q": "Qual método inicia um programa Java?",
+    "options": [
+      "start()",
+      "run()",
+      "main()",
+      "init()"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 131,
+    "levelId": 27,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 131,
+    "levelId": 27,
+    "level": "intermediate",
+    "q": "O que o operador '!=' significa?",
+    "options": [
+      "Igual",
+      "Menor que",
+      "Diferente",
+      "Maior que"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 131,
+    "levelId": 27,
+    "level": "intermediate",
+    "q": "Qual classe é usada para entrada de dados?",
+    "options": [
+      "Scanner",
+      "Input",
+      "Reader",
+      "Buffer"
+    ],
+    "answerIndex": 0,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 131,
+    "levelId": 27,
+    "level": "intermediate",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
+    "options": [
+      "5",
+      "6",
+      "Erro",
+      "x"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 131,
+    "levelId": 27,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 136,
+    "levelId": 28,
+    "level": "intermediate",
+    "q": "Qual classe é usada para entrada de dados?",
+    "options": [
+      "Scanner",
+      "Input",
+      "Reader",
+      "Buffer"
+    ],
+    "answerIndex": 0,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 136,
+    "levelId": 28,
+    "level": "intermediate",
+    "q": "Qual coleção NÃO aceita duplicados?",
+    "options": [
+      "List",
+      "Set",
+      "ArrayList",
+      "LinkedList"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 136,
+    "levelId": 28,
+    "level": "intermediate",
+    "q": "O que o operador '!=' significa?",
+    "options": [
+      "Igual",
+      "Menor que",
+      "Diferente",
+      "Maior que"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 136,
+    "levelId": 28,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 136,
+    "levelId": 28,
+    "level": "intermediate",
+    "q": "Qual é o tipo para valores verdadeiros/falsos?",
+    "options": [
+      "int",
+      "String",
+      "boolean",
+      "float"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 141,
+    "levelId": 29,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 141,
+    "levelId": 29,
+    "level": "intermediate",
+    "q": "Como se cria um objeto?",
+    "options": [
+      "class A = new A();",
+      "A a = new A();",
+      "A = objeto();",
+      "obj = A.new();"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 141,
+    "levelId": 29,
+    "level": "intermediate",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
+    "options": [
+      "5",
+      "6",
+      "Erro",
+      "x"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 141,
+    "levelId": 29,
+    "level": "intermediate",
+    "q": "Qual método inicia um programa Java?",
+    "options": [
+      "start()",
+      "run()",
+      "main()",
+      "init()"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 141,
+    "levelId": 29,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 146,
+    "levelId": 30,
+    "level": "intermediate",
+    "q": "O que o operador '!=' significa?",
+    "options": [
+      "Igual",
+      "Menor que",
+      "Diferente",
+      "Maior que"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 146,
+    "levelId": 30,
+    "level": "intermediate",
+    "q": "Qual tipo representa texto?",
+    "options": [
+      "char",
+      "String",
+      "bool",
+      "void"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 146,
+    "levelId": 30,
+    "level": "intermediate",
+    "q": "Qual método inicia um programa Java?",
+    "options": [
+      "start()",
+      "run()",
+      "main()",
+      "init()"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 146,
+    "levelId": 30,
+    "level": "intermediate",
+    "q": "Qual a saída de: int x = 5; System.out.println(++x);",
+    "options": [
+      "5",
+      "6",
+      "Erro",
+      "x"
+    ],
+    "answerIndex": 1,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 146,
+    "levelId": 30,
+    "level": "intermediate",
+    "q": "O que faz o 'for' em Java?",
+    "options": [
+      "Condicional",
+      "Entrada",
+      "Laço",
+      "Classe"
+    ],
+    "answerIndex": 2,
+    "xp": 15,
+    "coins": 7
+  },
+  {
+    "id": 151,
+    "levelId": 31,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 151,
+    "levelId": 31,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
     ],
     "answerIndex": 2,
     "xp": 20,
     "coins": 10
   },
   {
-    "id": 7,
+    "id": 151,
+    "levelId": 31,
     "level": "advanced",
-    "q": "Qual palavra‑chave impede herança?",
+    "q": "Qual interface funcional representa T → R?",
     "options": [
+      "Consumer",
+      "Predicate",
+      "Function",
+      "Runnable"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 151,
+    "levelId": 31,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
       "final",
-      "static",
-      "const",
-      "sealed"
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 151,
+    "levelId": 31,
+    "level": "advanced",
+    "q": "Qual é o tipo mais genérico?",
+    "options": [
+      "Object",
+      "String",
+      "Any",
+      "Class"
     ],
     "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 156,
+    "levelId": 32,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
+      "final",
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 156,
+    "levelId": 32,
+    "level": "advanced",
+    "q": "Qual classe representa exceções verificadas?",
+    "options": [
+      "RuntimeException",
+      "IOException",
+      "Error",
+      "NullPointerException"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 156,
+    "levelId": 32,
+    "level": "advanced",
+    "q": "Como tipar uma lista de inteiros?",
+    "options": [
+      "List<int>",
+      "List<Integer>",
+      "int[]",
+      "ArrayList<int>"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 156,
+    "levelId": 32,
+    "level": "advanced",
+    "q": "Qual anotação define sobrescrita?",
+    "options": [
+      "@Override",
+      "@Overload",
+      "@Extend",
+      "@Final"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 156,
+    "levelId": 32,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 161,
+    "levelId": 33,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
+      "final",
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 161,
+    "levelId": 33,
+    "level": "advanced",
+    "q": "Qual interface funcional representa T → R?",
+    "options": [
+      "Consumer",
+      "Predicate",
+      "Function",
+      "Runnable"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 161,
+    "levelId": 33,
+    "level": "advanced",
+    "q": "Qual anotação define sobrescrita?",
+    "options": [
+      "@Override",
+      "@Overload",
+      "@Extend",
+      "@Final"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 161,
+    "levelId": 33,
+    "level": "advanced",
+    "q": "Como tipar uma lista de inteiros?",
+    "options": [
+      "List<int>",
+      "List<Integer>",
+      "int[]",
+      "ArrayList<int>"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 161,
+    "levelId": 33,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 166,
+    "levelId": 34,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 166,
+    "levelId": 34,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
+      "final",
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 166,
+    "levelId": 34,
+    "level": "advanced",
+    "q": "Qual interface funcional representa T → R?",
+    "options": [
+      "Consumer",
+      "Predicate",
+      "Function",
+      "Runnable"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 166,
+    "levelId": 34,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 166,
+    "levelId": 34,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 171,
+    "levelId": 35,
+    "level": "advanced",
+    "q": "Como tipar uma lista de inteiros?",
+    "options": [
+      "List<int>",
+      "List<Integer>",
+      "int[]",
+      "ArrayList<int>"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 171,
+    "levelId": 35,
+    "level": "advanced",
+    "q": "Qual interface funcional representa T → R?",
+    "options": [
+      "Consumer",
+      "Predicate",
+      "Function",
+      "Runnable"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 171,
+    "levelId": 35,
+    "level": "advanced",
+    "q": "Qual classe representa exceções verificadas?",
+    "options": [
+      "RuntimeException",
+      "IOException",
+      "Error",
+      "NullPointerException"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 171,
+    "levelId": 35,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 171,
+    "levelId": 35,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 176,
+    "levelId": 36,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 176,
+    "levelId": 36,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 176,
+    "levelId": 36,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
+      "final",
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 176,
+    "levelId": 36,
+    "level": "advanced",
+    "q": "Qual interface funcional representa T → R?",
+    "options": [
+      "Consumer",
+      "Predicate",
+      "Function",
+      "Runnable"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 176,
+    "levelId": 36,
+    "level": "advanced",
+    "q": "Qual é o tipo mais genérico?",
+    "options": [
+      "Object",
+      "String",
+      "Any",
+      "Class"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 181,
+    "levelId": 37,
+    "level": "advanced",
+    "q": "Qual é o tipo mais genérico?",
+    "options": [
+      "Object",
+      "String",
+      "Any",
+      "Class"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 181,
+    "levelId": 37,
+    "level": "advanced",
+    "q": "Qual interface funcional representa T → R?",
+    "options": [
+      "Consumer",
+      "Predicate",
+      "Function",
+      "Runnable"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 181,
+    "levelId": 37,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
+      "final",
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 181,
+    "levelId": 37,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 181,
+    "levelId": 37,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 186,
+    "levelId": 38,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
+      "final",
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 186,
+    "levelId": 38,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 186,
+    "levelId": 38,
+    "level": "advanced",
+    "q": "Qual é o tipo mais genérico?",
+    "options": [
+      "Object",
+      "String",
+      "Any",
+      "Class"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 186,
+    "levelId": 38,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 186,
+    "levelId": 38,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 191,
+    "levelId": 39,
+    "level": "advanced",
+    "q": "O que significa 'polimorfismo'?",
+    "options": [
+      "Múltiplas formas",
+      "Erro",
+      "Sobrecarga",
+      "Tipo primitivo"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 191,
+    "levelId": 39,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 191,
+    "levelId": 39,
+    "level": "advanced",
+    "q": "Qual interface funcional representa T → R?",
+    "options": [
+      "Consumer",
+      "Predicate",
+      "Function",
+      "Runnable"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 191,
+    "levelId": 39,
+    "level": "advanced",
+    "q": "Qual é o tipo mais genérico?",
+    "options": [
+      "Object",
+      "String",
+      "Any",
+      "Class"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 191,
+    "levelId": 39,
+    "level": "advanced",
+    "q": "Qual anotação define sobrescrita?",
+    "options": [
+      "@Override",
+      "@Overload",
+      "@Extend",
+      "@Final"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 196,
+    "levelId": 40,
+    "level": "advanced",
+    "q": "Qual é o tipo mais genérico?",
+    "options": [
+      "Object",
+      "String",
+      "Any",
+      "Class"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 196,
+    "levelId": 40,
+    "level": "advanced",
+    "q": "Qual interface funcional representa T → R?",
+    "options": [
+      "Consumer",
+      "Predicate",
+      "Function",
+      "Runnable"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 196,
+    "levelId": 40,
+    "level": "advanced",
+    "q": "Como tipar uma lista de inteiros?",
+    "options": [
+      "List<int>",
+      "List<Integer>",
+      "int[]",
+      "ArrayList<int>"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 196,
+    "levelId": 40,
+    "level": "advanced",
+    "q": "O que significa 'polimorfismo'?",
+    "options": [
+      "Múltiplas formas",
+      "Erro",
+      "Sobrecarga",
+      "Tipo primitivo"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 196,
+    "levelId": 40,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 201,
+    "levelId": 41,
+    "level": "advanced",
+    "q": "Qual é o tipo mais genérico?",
+    "options": [
+      "Object",
+      "String",
+      "Any",
+      "Class"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 201,
+    "levelId": 41,
+    "level": "advanced",
+    "q": "Qual anotação define sobrescrita?",
+    "options": [
+      "@Override",
+      "@Overload",
+      "@Extend",
+      "@Final"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 201,
+    "levelId": 41,
+    "level": "advanced",
+    "q": "Qual classe representa exceções verificadas?",
+    "options": [
+      "RuntimeException",
+      "IOException",
+      "Error",
+      "NullPointerException"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 201,
+    "levelId": 41,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 201,
+    "levelId": 41,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 206,
+    "levelId": 42,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 206,
+    "levelId": 42,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 206,
+    "levelId": 42,
+    "level": "advanced",
+    "q": "Qual é o tipo mais genérico?",
+    "options": [
+      "Object",
+      "String",
+      "Any",
+      "Class"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 206,
+    "levelId": 42,
+    "level": "advanced",
+    "q": "Qual classe representa exceções verificadas?",
+    "options": [
+      "RuntimeException",
+      "IOException",
+      "Error",
+      "NullPointerException"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 206,
+    "levelId": 42,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 211,
+    "levelId": 43,
+    "level": "advanced",
+    "q": "O que significa 'polimorfismo'?",
+    "options": [
+      "Múltiplas formas",
+      "Erro",
+      "Sobrecarga",
+      "Tipo primitivo"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 211,
+    "levelId": 43,
+    "level": "advanced",
+    "q": "Qual interface funcional representa T → R?",
+    "options": [
+      "Consumer",
+      "Predicate",
+      "Function",
+      "Runnable"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 211,
+    "levelId": 43,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
+      "final",
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 211,
+    "levelId": 43,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 211,
+    "levelId": 43,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 216,
+    "levelId": 44,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 216,
+    "levelId": 44,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 216,
+    "levelId": 44,
+    "level": "advanced",
+    "q": "Qual classe representa exceções verificadas?",
+    "options": [
+      "RuntimeException",
+      "IOException",
+      "Error",
+      "NullPointerException"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 216,
+    "levelId": 44,
+    "level": "advanced",
+    "q": "Como tipar uma lista de inteiros?",
+    "options": [
+      "List<int>",
+      "List<Integer>",
+      "int[]",
+      "ArrayList<int>"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 216,
+    "levelId": 44,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
+      "final",
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 221,
+    "levelId": 45,
+    "level": "advanced",
+    "q": "O que significa 'polimorfismo'?",
+    "options": [
+      "Múltiplas formas",
+      "Erro",
+      "Sobrecarga",
+      "Tipo primitivo"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 221,
+    "levelId": 45,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 221,
+    "levelId": 45,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 221,
+    "levelId": 45,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
+      "final",
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 221,
+    "levelId": 45,
+    "level": "advanced",
+    "q": "Qual anotação define sobrescrita?",
+    "options": [
+      "@Override",
+      "@Overload",
+      "@Extend",
+      "@Final"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 226,
+    "levelId": 46,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 226,
+    "levelId": 46,
+    "level": "advanced",
+    "q": "O que significa 'polimorfismo'?",
+    "options": [
+      "Múltiplas formas",
+      "Erro",
+      "Sobrecarga",
+      "Tipo primitivo"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 226,
+    "levelId": 46,
+    "level": "advanced",
+    "q": "Qual é o tipo mais genérico?",
+    "options": [
+      "Object",
+      "String",
+      "Any",
+      "Class"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 226,
+    "levelId": 46,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 226,
+    "levelId": 46,
+    "level": "advanced",
+    "q": "Como tipar uma lista de inteiros?",
+    "options": [
+      "List<int>",
+      "List<Integer>",
+      "int[]",
+      "ArrayList<int>"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 231,
+    "levelId": 47,
+    "level": "advanced",
+    "q": "Como tipar uma lista de inteiros?",
+    "options": [
+      "List<int>",
+      "List<Integer>",
+      "int[]",
+      "ArrayList<int>"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 231,
+    "levelId": 47,
+    "level": "advanced",
+    "q": "Qual classe representa exceções verificadas?",
+    "options": [
+      "RuntimeException",
+      "IOException",
+      "Error",
+      "NullPointerException"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 231,
+    "levelId": 47,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 231,
+    "levelId": 47,
+    "level": "advanced",
+    "q": "O que faz o try-with-resources?",
+    "options": [
+      "Libera memória",
+      "Fecha arquivos",
+      "Evita null",
+      "Cria loops"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 231,
+    "levelId": 47,
+    "level": "advanced",
+    "q": "Qual anotação define sobrescrita?",
+    "options": [
+      "@Override",
+      "@Overload",
+      "@Extend",
+      "@Final"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 236,
+    "levelId": 48,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 236,
+    "levelId": 48,
+    "level": "advanced",
+    "q": "Qual interface funcional representa T → R?",
+    "options": [
+      "Consumer",
+      "Predicate",
+      "Function",
+      "Runnable"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 236,
+    "levelId": 48,
+    "level": "advanced",
+    "q": "Qual é o tipo mais genérico?",
+    "options": [
+      "Object",
+      "String",
+      "Any",
+      "Class"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 236,
+    "levelId": 48,
+    "level": "advanced",
+    "q": "Qual classe representa exceções verificadas?",
+    "options": [
+      "RuntimeException",
+      "IOException",
+      "Error",
+      "NullPointerException"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 236,
+    "levelId": 48,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
+      "final",
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 241,
+    "levelId": 49,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 241,
+    "levelId": 49,
+    "level": "advanced",
+    "q": "Qual palavra impede herança?",
+    "options": [
+      "sealed",
+      "final",
+      "private",
+      "static"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 241,
+    "levelId": 49,
+    "level": "advanced",
+    "q": "Qual anotação define sobrescrita?",
+    "options": [
+      "@Override",
+      "@Overload",
+      "@Extend",
+      "@Final"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 241,
+    "levelId": 49,
+    "level": "advanced",
+    "q": "O que significa 'polimorfismo'?",
+    "options": [
+      "Múltiplas formas",
+      "Erro",
+      "Sobrecarga",
+      "Tipo primitivo"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 241,
+    "levelId": 49,
+    "level": "advanced",
+    "q": "Qual classe representa exceções verificadas?",
+    "options": [
+      "RuntimeException",
+      "IOException",
+      "Error",
+      "NullPointerException"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 246,
+    "levelId": 50,
+    "level": "advanced",
+    "q": "O que é um stream em Java?",
+    "options": [
+      "Entrada de áudio",
+      "Coleção de bytes",
+      "Fluxo de dados",
+      "Classe de exceção"
+    ],
+    "answerIndex": 2,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 246,
+    "levelId": 50,
+    "level": "advanced",
+    "q": "Como se declara uma lambda simples?",
+    "options": [
+      "(x) -> x + 1",
+      "lambda(x) x+1",
+      "x => x + 1",
+      "function(x) x+1"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 246,
+    "levelId": 50,
+    "level": "advanced",
+    "q": "O que significa 'polimorfismo'?",
+    "options": [
+      "Múltiplas formas",
+      "Erro",
+      "Sobrecarga",
+      "Tipo primitivo"
+    ],
+    "answerIndex": 0,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 246,
+    "levelId": 50,
+    "level": "advanced",
+    "q": "Qual classe representa exceções verificadas?",
+    "options": [
+      "RuntimeException",
+      "IOException",
+      "Error",
+      "NullPointerException"
+    ],
+    "answerIndex": 1,
+    "xp": 20,
+    "coins": 10
+  },
+  {
+    "id": 246,
+    "levelId": 50,
+    "level": "advanced",
+    "q": "Qual interface funcional representa T → R?",
+    "options": [
+      "Consumer",
+      "Predicate",
+      "Function",
+      "Runnable"
+    ],
+    "answerIndex": 2,
     "xp": 20,
     "coins": 10
   }

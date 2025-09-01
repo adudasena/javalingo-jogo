@@ -7,7 +7,7 @@ import { completeLevel } from '../state/progress.js'
 function getQueryLevel() {
   const url = new URL(window.location.href)
   const n = Number(url.searchParams.get('level'))
-  return Number.isFinite(n) && n >= 1 && n <= 30 ? n : 1
+  return Number.isFinite(n) && n >= 1 && n <= 50 ? n : 1
 }
 
 export default function Quiz(){
@@ -71,7 +71,13 @@ export default function Quiz(){
           {aprovado ? (
             <>
               <p className="small">Recompensas aplicadas. Próximo nível liberado 🎉</p>
-              <a className="btn" href="/missions">Voltar às Missões</a>
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '14px', marginTop: '20px' }}>
+              <a className="btn-rocket" href={`/quiz?level=${currentLevel + 1}`}>
+  🚀 Ir para o próximo nível
+              </a>
+
+  <a className="btn btn-ghost" href="/missions">Voltar às Missões</a>
+</div>
             </>
           ) : (
             <>

@@ -1,19 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-export default function QuestionCard({ q, onAnswer }){
+export default function QuestionCard({ q, onAnswer }) {
   const [picked, setPicked] = useState(null)
-  if(!q) return null
 
-  function choose(idx){
+  //sempre que a pergunta mudar, zera a seleção
+  useEffect(() => {
+    setPicked(null)
+  }, [q])
+
+  if (!q) return null
+
+  function choose(idx) {
     if (picked != null) return
     setPicked(idx)
-    setTimeout(()=> onAnswer(idx), 450) // dá tempo da animação
+    setTimeout(() => onAnswer(idx), 450) // dá tempo da animação
   }
 
   return (
     <div className="question-card">
       <div className="quiz-header">
-        <h3 style={{margin:0}}>{q.q}</h3>
+        <h3 style={{ margin: 0 }}>{q.q}</h3>
       </div>
 
       <div className="answer-grid">
@@ -28,7 +34,12 @@ export default function QuestionCard({ q, onAnswer }){
           ].join(' ').trim()
 
           return (
-            <button key={idx} className={cls} onClick={()=>choose(idx)} disabled={picked!=null}>
+            <button
+              key={idx}
+              className={cls}
+              onClick={() => choose(idx)}
+              disabled={picked != null}
+            >
               {opt}
             </button>
           )

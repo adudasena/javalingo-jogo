@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { getProgress } from "../state/progress.js";
 import { getState } from "../lib/storage";
 
-const TOTAL = 30;
+const TOTAL = 50;
 
 export default function Missions() {
   const nav = useNavigate();
@@ -21,7 +21,7 @@ export default function Missions() {
           {Array.from({ length: TOTAL }, (_, i) => i + 1).map((n) => {
             const locked = n > highestUnlocked;
             const done = completed.includes(n);
-            const milestone = [5, 10, 15, 20, 25, 30].includes(n);
+            const milestone = [10, 20, 30, 40, 50].includes(n);
 
             return (
               <button
