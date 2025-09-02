@@ -13,8 +13,9 @@ export default function LevelTest() {
 
   const s = getState();
 
+  // se já fez o teste, redireciona
   useEffect(() => {
-    if (s.levelTestDone) nav("/leveltest");
+    if (s.levelTestDone) nav("/home");
   }, [s.levelTestDone, nav]);
 
   function onAnswer(i) {
@@ -24,37 +25,36 @@ export default function LevelTest() {
   }
 
   function finish() {
+    const ratio = score / qs.length;
+
     let level = "beginner";
+    if (score >= 6) level = "advanced";
+    else if (score >= 3) level = "intermediate";
 
-    if (score >= 6) {
-      level = "advanced";
-    } else if (score >= 3) {
-      level = "intermediate";
-    }
-
-    // Salva no localStorage
+    // trava futuras tentativas
     setState({ level, levelTestDone: true });
 
-    // Libera níveis com base no nível atribuído
-    let start = 1;
-    let end = 1;
+    // nome do usuário atual
+    const user = s.user?.name || "demo";
 
-    if (level === "advanced") {
-      start = 31;
-      end = 50;
-    } else if (level === "intermediate") {
+    // define faixa de níveis liberados
+    let start = 1;
+    let end = 10;
+
+    if (level === "intermediate") {
       start = 11;
       end = 30;
-    } else {
-      start = 1;
-      end = 10;
+    } else if (level === "advanced") {
+      start = 31;
+      end = 50;
     }
 
+    // libera níveis correspondentes
     for (let n = start; n <= end; n++) {
-      completeLevel(n);
+      completeLevel(n, user);
     }
 
-    alert(`Você foi classificado como ${level.toUpperCase()}. Níveis ${start} a ${end} liberados!`);
+    alert(`Teste finalizado! Seu nível é: ${level.toUpperCase()}. Você agora tem acesso aos níveis de ${start} a ${end}.`);
     nav("/home");
   }
 
