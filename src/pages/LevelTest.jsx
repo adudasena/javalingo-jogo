@@ -5,16 +5,14 @@ import { getState, setState } from "../lib/storage";
 import QuestionCard from "../components/QuestionCard";
 import { completeLevel } from "../state/progress.js";
 
-
 export default function LevelTest() {
   const nav = useNavigate();
-  const qs = useMemo(() => data.slice(0, 5), []);
+  const qs = useMemo(() => data.slice(0, 7), []); // agora são 7 perguntas
   const [idx, setIdx] = useState(0);
   const [score, setScore] = useState(0);
 
   const s = getState();
 
-  // se já fez o teste, manda para a intro bloqueada
   useEffect(() => {
     if (s.levelTestDone) nav("/leveltest");
   }, [s.levelTestDone, nav]);
@@ -26,16 +24,37 @@ export default function LevelTest() {
   }
 
   function finish() {
-    const ratio = score / qs.length;
-    const level = ratio >= 0.8 ? "advanced" : ratio >= 0.5 ? "intermediate" : "beginner";
+    let level = "beginner";
 
-    // trava futuras tentativas
+    if (score >= 6) {
+      level = "advanced";
+    } else if (score >= 3) {
+      level = "intermediate";
+    }
+
+    // Salva no localStorage
     setState({ level, levelTestDone: true });
 
-    // libera alguns níveis iniciais conforme desempenho
-    const liberarAte = level === "advanced" ? 5 : level === "intermediate" ? 3 : 1;
-    for (let n = 1; n <= liberarAte; n++) completeLevel(n);
+    // Libera níveis com base no nível atribuído
+    let start = 1;
+    let end = 1;
 
+    if (level === "advanced") {
+      start = 31;
+      end = 50;
+    } else if (level === "intermediate") {
+      start = 11;
+      end = 30;
+    } else {
+      start = 1;
+      end = 10;
+    }
+
+    for (let n = start; n <= end; n++) {
+      completeLevel(n);
+    }
+
+    alert(`Você foi classificado como ${level.toUpperCase()}. Níveis ${start} a ${end} liberados!`);
     nav("/home");
   }
 
@@ -43,7 +62,7 @@ export default function LevelTest() {
     <div className="container">
       <div className="card">
         <h2>Teste de Nivelamento</h2>
-        <p className="small">Responda 5 perguntas. No final, definimos seu nível automaticamente.</p>
+        <p className="small">Responda 7 perguntas. No final, definimos seu nível automaticamente.</p>
         <QuestionCard q={qs[idx]} onAnswer={onAnswer} />
         <p className="small">Progresso: {idx + 1} / {qs.length}</p>
       </div>
