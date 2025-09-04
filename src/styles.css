@@ -430,3 +430,69 @@ input:focus, .input:focus, select:focus{ outline-color:var(--ring) }
 .ticker{ margin: 10px 0 14px; }
 .cta-banner{ margin-top: 18px; gap: 16px; }
 
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(30px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(30px) rotate(-360deg);
+  }
+}
+
+.javali-orbit-container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.javali-orbit {
+  position: absolute;
+  top: -40px;
+  left: calc(50% - 15px);
+  width: 30px;
+  height: 30px;
+  animation: orbit 4s linear infinite;
+  z-index: 5;
+}
+
+
+
+
+
+/* botão roxo com glow */
+.btn-rocket{
+  --h:48px;
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  height:var(--h);
+  padding:0 20px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.14);
+  background:linear-gradient(90deg, var(--accent), #9f7aea);
+  color:#fff !important;
+  text-decoration:none !important;
+  font-weight:900;
+  letter-spacing:.2px;
+  box-shadow: var(--accent-glow);
+  position:relative; overflow:hidden;
+  transition:transform .08s ease, filter .15s ease, box-shadow .2s ease;
+}
+.btn-rocket:hover{ filter:brightness(1.06); box-shadow:0 14px 34px rgba(124,58,237,.45); transform:translateY(-1px); }
+.btn-rocket:active{ transform:translateY(0); }
+.btn-rocket:focus{ outline:2px solid transparent; box-shadow:0 0 0 3px var(--ring); }
+
+/* brilho que atravessa */
+.btn-rocket .shine{
+  position:absolute; inset:-40% -20%;
+  background:linear-gradient(120deg, transparent 0%, rgba(255,255,255,.18) 35%, transparent 70%);
+  transform:translateX(-120%);
+  animation:shine 2.6s ease-in-out infinite;
+  pointer-events:none;
+}
+@keyframes shine{ 50%{ transform:translateX(120%);} }
+
+/* opcional: deixa o emoji/ícone num tamanho legal */
+.btn-rocket .icon{ font-size:20px; line-height:1; }
