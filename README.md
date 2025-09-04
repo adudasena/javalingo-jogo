@@ -10,3 +10,4 @@ loja de skins e perfil.
 - `src/lib/storage.js` → persistência no `localStorage`
 - `src/pages/*` → telas
 - `src/components/*` → componentes reutilizáveis
+

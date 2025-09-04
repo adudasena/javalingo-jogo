@@ -1,72 +1,41 @@
-import React, { useEffect, useState } from 'react'
+// src/pages/Login.jsx
+import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
-import { setState } from '../lib/storage'
+import { getState, setState } from '../lib/storage'
 import Mascot from '../components/Mascot'
 import BackgroundFX from '../components/BackgroundFX'
-
-// "Banco" local (mock) — apenas para demo/estudo
-const USERS_KEY = 'javalingo_users'
-
-// util: carregar/salvar usuários no localStorage
-function loadUsers() {
-  try {
-    const raw = localStorage.getItem(USERS_KEY)
-    return raw ? JSON.parse(raw) : []
-  } catch {
-    return []
-  }
-}
-function saveUsers(list) {
-  localStorage.setItem(USERS_KEY, JSON.stringify(list))
-}
+import { Api } from '../lib/api'   // <- usa a API http://localhost:4000
 
 export default function Login(){
   const nav = useNavigate()
-  const [name, setName] = useState('')
+  const [nameOrEmail, setNameOrEmail] = useState('')
   const [pass, setPass] = useState('')
   const [err, setErr] = useState('')
 
-  // (opcional) semear um usuário demo na 1ª execução
-  useEffect(() => {
-    const users = loadUsers()
-    if (users.length === 0) {
-      users.push({ name: 'demo', email: 'demo@unifil', pass: '123456' })
-      saveUsers(users)
-    }
-  }, [])
-
-  function handleSubmit(e){
+  async function handleSubmit(e){
     e.preventDefault()
     setErr('')
 
-    // validações básicas
-    if (!name.trim()) {
-      setErr('Por favor, informe o usuário!')
-      return
-    }
-    if (!pass) {
-      setErr('Por favor, informe a senha!')
-      return
-    }
+    if (!nameOrEmail.trim()) return setErr('Por favor, informe o usuário ou e-mail!')
+    if (!pass) return setErr('Por favor, informe a senha!')
 
-    // autenticação no "banco" local
-    const users = loadUsers()
-    const user = users.find(u =>
-      u.name.toLowerCase() === name.trim().toLowerCase() && u.pass === pass
-    )
+    try {
+      // chama o backend Node+SQLite
+      const data = await Api.post('/api/login', { nameOrEmail, pass })
+      const user = data.user
 
-    if (!user) {
-      setErr('Usuário ou senha inválidos!')
-      return
+      // Se o teste ainda não foi concluído no estado atual, garante que o pop-up volte a aparecer
+      const prev = getState()
+      if (!prev.levelTestDone) {
+        try { localStorage.removeItem(`testeFeito_${user.name}`) } catch {}
+      }
+
+      // cria sessão do app
+      setState({ user, coins: 0, xp: 0 })
+      nav('/home')
+    } catch (e) {
+      setErr(e.message || 'Não foi possível entrar.')
     }
-
-    // login ok: salva sessão no storage global do app e navega
-    setState({
-      user: { name: user.name, email: user.email },
-      coins: 0,
-      xp: 0
-    })
-    nav('/home')
   }
 
   return (
@@ -79,9 +48,7 @@ export default function Login(){
           <h1 className="header-title" style={{textAlign:'center'}}>JavaLingo</h1>
 
           <div style={{display:'grid',placeItems:'center',margin:'18px 0 22px'}}>
-            <div className="avatar">
-              <Mascot skin="classic" size={160}/>
-            </div>
+            <div className="avatar"><Mascot skin="classic" size={160}/></div>
           </div>
 
           <form onSubmit={handleSubmit} className="input-row">
@@ -93,9 +60,9 @@ export default function Login(){
 
             <input
               className="input"
-              placeholder="Usuário"
-              value={name}
-              onChange={e=>setName(e.target.value)}
+              placeholder="Usuário ou e-mail"
+              value={nameOrEmail}
+              onChange={e=>setNameOrEmail(e.target.value)}
             />
 
             <input
@@ -109,7 +76,7 @@ export default function Login(){
             <button
               className="btn btn-accent btn-full btn-lg"
               type="submit"
-              disabled={!name.trim() || !pass}
+              disabled={!nameOrEmail.trim() || !pass}
             >
               Entrar
             </button>

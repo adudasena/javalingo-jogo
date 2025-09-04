@@ -1,6 +1,8 @@
+// src/pages/Signup.jsx
 import React, { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
 import { setState } from '../lib/storage'
+import { Api } from '../lib/api'
 import Mascot from '../components/Mascot'
 
 export default function Signup(){
@@ -11,15 +13,30 @@ export default function Signup(){
   const [confirm, setConfirm] = useState('')
   const [err, setErr] = useState('')
 
-  function handleSubmit(e){
+  async function handleSubmit(e){
     e.preventDefault()
+    setErr('')
+
     if (!name.trim()) return setErr('Informe seu nome.')
-    if (!email.trim() || !email.includes('@')) return setErr('Informe um e‑mail válido.')
+    if (!email.trim() || !email.includes('@')) return setErr('Informe um e-mail válido.')
     if (pass.length < 6) return setErr('Senha precisa ter ao menos 6 caracteres.')
     if (pass !== confirm) return setErr('As senhas não conferem.')
 
-    setState({ user:{ name: name.trim(), email: email.trim() }, coins:0, xp:0 })
-    nav('/home')
+    try {
+      // 🔗 chama o backend para cadastrar no SQLite
+      const resp = await Api.post('/api/signup', { name, email, pass })
+      const user = resp.user // { name, email }
+
+      // garante que o pop-up do teste apareça para usuário novo
+      try { localStorage.removeItem(`testeFeito_${user.name}`) } catch {}
+
+      // cria sessão do app
+      setState({ user, coins: 0, xp: 0, levelTestDone: false })
+
+      nav('/home')
+    } catch (e) {
+      setErr(e.message || 'Não foi possível cadastrar.')
+    }
   }
 
   return (
@@ -33,7 +50,7 @@ export default function Signup(){
         <form onSubmit={handleSubmit} className="input-row">
           {err && <p className="small" style={{color:'crimson',textAlign:'center',marginBottom:8}}>{err}</p>}
           <input className="input" placeholder="Nome" value={name} onChange={e=>setName(e.target.value)} />
-          <input className="input" placeholder="E‑mail" type="email" value={email} onChange={e=>setEmail(e.target.value)} />
+          <input className="input" placeholder="E-mail" type="email" value={email} onChange={e=>setEmail(e.target.value)} />
           <input className="input" placeholder="Senha (mín. 6)" type="password" value={pass} onChange={e=>setPass(e.target.value)} />
           <input className="input" placeholder="Confirmar senha" type="password" value={confirm} onChange={e=>setConfirm(e.target.value)} />
           <button className="btn btn-primary btn-full btn-lg" disabled={!name.trim() || !email.trim() || !pass || !confirm}>Cadastrar</button>

@@ -24,39 +24,35 @@ export default function LevelTest() {
     else finish();
   }
 
-  function finish() {
-    const ratio = score / qs.length;
+function finish() {
+  let level = "beginner";
+  if (score >= 6) level = "advanced";
+  else if (score >= 3) level = "intermediate";
 
-    let level = "beginner";
-    if (score >= 6) level = "advanced";
-    else if (score >= 3) level = "intermediate";
+  setState({ level, levelTestDone: true });
+  const user = s.user?.name || "demo";
 
-    // trava futuras tentativas
-    setState({ level, levelTestDone: true });
+  let end = 1;
+  let startLevel = 1;
 
-    // nome do usuário atual
-    const user = s.user?.name || "demo";
-
-    // define faixa de níveis liberados
-    let start = 1;
-    let end = 10;
-
-    if (level === "intermediate") {
-      start = 11;
-      end = 30;
-    } else if (level === "advanced") {
-      start = 31;
-      end = 50;
-    }
-
-    // libera níveis correspondentes
-    for (let n = start; n <= end; n++) {
-      completeLevel(n, user);
-    }
-
-    alert(`Teste finalizado! Seu nível é: ${level.toUpperCase()}. Você agora tem acesso aos níveis de ${start} a ${end}.`);
-    nav("/home");
+  if (level === "intermediate") {
+    end = 11;
+    startLevel = 11;
+    alert("Você pode praticar até o nível 10 (iniciante). Seu nível inicial é o 11 (intermediário).");
+  } else if (level === "advanced") {
+    end = 31;
+    startLevel = 32;
+    alert("Você pode praticar até o nível 30 (intermediário). Seu nível inicial é o 31 (avançado).");
+  } else {
+    alert("Seu nível inicial é o 1 (iniciante).");
   }
+
+  for (let n = 1; n <= end; n++) {
+    completeLevel(n, user);
+  }
+
+  nav("/home");
+}
 
   return (
     <div className="container">

@@ -496,3 +496,13 @@ input:focus, .input:focus, select:focus{ outline-color:var(--ring) }
 
 /* opcional: deixa o emoji/ícone num tamanho legal */
 .btn-rocket .icon{ font-size:20px; line-height:1; }
+
+/*Teste cores níveis*/
+
+.level-card.beginner { border-color:#3b82f6; }      /* azul */
+.level-card.intermediate { border-color:#22c55e; }  /* verde */
+.level-card.advanced { border-color:#ef4444; }      /* vermelho */
+
+.level-card.locked.beginner { background:rgba(59,130,246,.15); }
+.level-card.locked.intermediate { background:rgba(34,197,94,.15); }
+.level-card.locked.advanced { background:rgba(239,68,68,.15); }

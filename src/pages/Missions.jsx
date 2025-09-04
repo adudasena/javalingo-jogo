@@ -11,6 +11,12 @@ export default function Missions() {
   const user = s.user?.name || "demo";
   const { highestUnlocked, completed } = getProgress(user);
 
+  function getPhase(n) {
+    if (n <= 10) return "beginner";       // iniciante
+    if (n <= 30) return "intermediate";   // intermediário
+    return "advanced";                    // avançado
+  }
+
   return (
     <div className="container">
       <div className="card section-card">
@@ -22,20 +28,29 @@ export default function Missions() {
             const locked = n > highestUnlocked;
             const done = completed.includes(n);
             const milestone = [10, 20, 30, 40, 50].includes(n);
+            const phase = getPhase(n);
 
             return (
               <button
                 key={n}
-                className={`level-card ${locked ? "locked" : ""} ${done ? "done" : ""} ${
+                className={`level-card ${phase} ${locked ? "locked" : ""} ${done ? "done" : ""} ${
                   milestone ? "milestone" : ""
                 }`}
                 onClick={() => !locked && nav(`/quiz?level=${n}`)}
-                title={locked ? "Complete o nível anterior para liberar" : `Entrar no nível ${n}`}
+                title={
+                  locked
+                    ? "Complete o nível anterior para liberar"
+                    : `Entrar no nível ${n}`
+                }
               >
                 <div className="level-number">
                   Nível {n} {milestone ? "⭐" : ""}
                 </div>
-                {locked ? <span className="lock">🔒</span> : done ? <span className="check">✓</span> : null}
+                {locked ? (
+                  <span className="lock">🔒</span>
+                ) : done ? (
+                  <span className="check">✓</span>
+                ) : null}
               </button>
             );
           })}
