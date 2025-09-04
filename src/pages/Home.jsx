@@ -88,7 +88,7 @@ export default function Home() {
           )}
 
           <div className="status-item">
-            <span className="label">Moedas</span>
+            <span className="label">JavaCoins</span>
             <CoinCounter coins={s.coins ?? 0} />
           </div>
 

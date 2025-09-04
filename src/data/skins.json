@@ -1,12 +1,10 @@
 [
-  {
-    "id": "classic",
-    "name": "Javali Clássico",
-    "price": 0
-  },
-  {
-    "id": "pixel",
-    "name": "Javali De Ternin",
-    "price": 40
-  }
+  { "id": "classic",       "name": "Javali Clássico",      "price": 0 },
+  { "id": "comp_unifil",   "name": "Javali Computação UniFil", "price": 10 },
+  { "id": "unifil",        "name": "Javali UniFil",         "price": 360 },
+  { "id": "universitario", "name": "Javali Universitário",  "price": 780 },
+  { "id": "flamejante",   "name": "Javali Flamejante",   "price": 920 },
+  { "id": "hacker",         "name": "Javali Hacker",      "price": 1120 },
+  { "id": "malandro",         "name": "Javali Malandro",      "price": 1790 },
+  { "id": "dev_senior",    "name": "Javali Dev Sênior",     "price": 2100 }
 ]
