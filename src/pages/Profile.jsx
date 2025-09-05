@@ -156,23 +156,13 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* AÇÕES FINAIS */}
-      <div className="card actions-footer">
-        <div className="left" style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-          <button
-            className="btn btn-primary"
-            onClick={() =>
-              navigator.clipboard.writeText(`${name} chegou ao nível ${level} no JavaLingo!`)
-            }
-          >
-            Compartilhar
-          </button>
-        </div>
-        <div className="right" style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-          <button className="btn btn-accent" onClick={logout}>Sair</button>
-          <button className="btn btn-ghost" onClick={() => setShowAdvanced(true)}>Opções avançadas</button>
-        </div>
-      </div>
+{/* AÇÕES FINAIS */}
+<div className="card actions-footer">
+  <div className="right" style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
+    <button className="btn btn-accent" onClick={logout}>Sair</button>
+    <button className="btn btn-ghost" onClick={() => setShowAdvanced(true)}>Opções avançadas</button>
+  </div>
+</div>
 
       {/* MODAL: Editar perfil */}
       {showEdit && (
