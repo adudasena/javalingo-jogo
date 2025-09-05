@@ -103,17 +103,11 @@ export default function Home() {
           </h1>
           <p className="hero-sub">Aprender Java nunca foi tão divertido! ✨</p>
 
-          <div className="hero-cta-row">
-            <Link className="btn btn-primary btn-lg" to="/missions">Começar a jogar</Link>
-            <button
-              className="btn btn-ghost btn-lg"
-              onClick={claimDaily}
-              disabled={s.dailyClaimed}
-              title={s.dailyClaimed ? "Já coletado hoje" : "Ganhe 25 JavaCoins"}
-            >
-              {s.dailyClaimed ? "Diária coletada" : "Coletar diária +25🪙"}
-            </button>
-          </div>
+<div className="hero-cta-row">
+  <Link className="btn btn-primary btn-lg" to="/missions">
+    Começar a jogar
+  </Link>
+</div>
 
           <div className="hero-progress">
             <span className="label">Rumo ao próximo nível</span>
