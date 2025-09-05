@@ -106,12 +106,12 @@ export default function Home() {
         <div className="track">
           <span>
             💡 Dica: pratique todos os dias · 🏆 Complete missões para ganhar XP ·{" "}
-            <img src="/assets/coin.png" alt="JavaCoin" width="14" height="14" className="coin-inline" />
+            <img src="public/assets/coin.png" alt="JavaCoin" width="14" height="14" className="coin-inline" />
             Troque JavaCoins por skins ·{" "}
           </span>
           <span>
             💡 Dica: pratique todos os dias · 🏆 Complete missões para ganhar XP ·{" "}
-            <img src="/assets/coin.png" alt="JavaCoin" width="14" height="14" className="coin-inline" />
+            <img src="public/assets/coin.png" alt="JavaCoin" width="14" height="14" className="coin-inline" />
             Troque JavaCoins por skins ·{" "}
           </span>
         </div>
