@@ -1,3 +1,4 @@
+// src/pages/Home.jsx
 import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Mascot from "../components/Mascot";
@@ -12,27 +13,27 @@ import "../styles.css";
 export default function Home() {
   const s = getState();
   const name = s.user?.name || "aluno(a)";
-  const level = s.level;
+  const level = s.level ?? "beginner"; // fallback seguro
   const levelLabel = levelToLabel(level);
   const xpToNext = 100;
   const currentXP = s.xp ?? 0;
   const pct = Math.min(100, Math.round(((currentXP % xpToNext) / xpToNext) * 100));
   const hasLevel = s.level !== "indefinido";
 
-  // popup de nivelamento
+  // popup de nivelamento (overlay, sem interromper a página)
   const [showPopup, setShowPopup] = useState(false);
   useEffect(() => {
     const username = s.user?.name || "demo";
     const testeFeito = localStorage.getItem(`testeFeito_${username}`);
-    if (!testeFeito) setShowPopup(true);
-  }, []);
+    if (!testeFeito && !s.levelTestDone) setShowPopup(true);
+  }, []); // eslint-disable-line
 
   // missões destaque (demo)
   const featured = useMemo(
     () => [
-      { id: "loops",   title: "Laços & Loops",    tag: "Básico",    xp: 20, to: "/missions?m=loops" },
+      { id: "loops",   title: "Laços & Loops",    tag: "Básico",     xp: 20, to: "/missions?m=loops" },
       { id: "oo",      title: "POO: Classes",     tag: "Intermedi.", xp: 30, to: "/missions?m=poo" },
-      { id: "streams", title: "Streams & Map",    tag: "Avançado",  xp: 40, to: "/missions?m=streams" },
+      { id: "streams", title: "Streams & Map",    tag: "Avançado",   xp: 40, to: "/missions?m=streams" },
     ],
     []
   );
@@ -64,10 +65,36 @@ export default function Home() {
     }
   }
 
-  if (showPopup) return <NivelamentoPopup user={name} onClose={() => setShowPopup(false)} />;
-
   return (
     <div className="home-wrap">
+      {/* TOPBAR fixa */}
+      <nav
+        className="topbar"
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 50,
+          display: "flex",
+          gap: 12,
+          alignItems: "center",
+          padding: "10px 16px",
+          background: "rgba(6,24,16,.6)",
+          backdropFilter: "blur(8px)",
+          borderBottom: "1px solid rgba(124,58,237,.25)",
+          borderRadius: 12,
+          marginBottom: 12,
+        }}
+      >
+        <Link to="/home" className="btn btn-ghost">Início</Link>
+        <Link to="/missions" className="btn btn-ghost">Missões</Link>
+        <Link to="/shop" className="btn btn-ghost">Loja</Link>
+        <Link to="/profile" className="btn btn-ghost">Perfil</Link>
+        <Link to="/leveltest" className="btn btn-ghost">Teste</Link>
+        <div style={{ marginLeft: "auto", opacity: .9 }} className="small">
+          Usuário: <b>{name}</b> · <CoinCounter coins={s.coins ?? 0} />
+        </div>
+      </nav>
+
       {/* HERO */}
       <section className="card hero-card">
         <div className="hero-left">
@@ -145,6 +172,35 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Painel de Progresso */}
+        <div className="card progress-card">
+          <h3>Seu progresso</h3>
+          <ul className="progress-list">
+            <li><span className="label">Nível</span><b>{levelLabel}</b></li>
+            {hasLevel && (
+              <li className="row">
+                <span className="label">XP</span>
+                <div className="grow">
+                  <ProgressBar value={pct} />
+                  <span className="small">{currentXP} / {Math.ceil(currentXP / 100) * 100} XP</span>
+                </div>
+              </li>
+            )}
+            <li className="row">
+              <span className="label">JavaCoins</span>
+              <CoinCounter coins={s.coins ?? 0} />
+            </li>
+            <li className="row">
+              <span className="label">Ações</span>
+              <div className="actions">
+                <Link className="btn btn-accent" to="/missions">Jogar</Link>
+                <Link className="btn btn-ghost" to="/shop">Loja</Link>
+                <Link className="btn btn-ghost" to="/profile">Perfil</Link>
+              </div>
+            </li>
+          </ul>
+        </div>
+
         {/* Feed */}
         <div className="card feed-card">
           <h3>Atividade recente</h3>
@@ -169,6 +225,9 @@ export default function Home() {
           <span>💡 Dica: pratique todos os dias · 🏆 Complete missões para ganhar XP · 🪙 Troque JavaCoins por skins · </span>
         </div>
       </div>
+
+      {/* Popup de nivelamento como overlay */}
+      {showPopup && <NivelamentoPopup user={name} onClose={() => setShowPopup(false)} />}
     </div>
   );
 }
