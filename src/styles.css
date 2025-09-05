@@ -545,3 +545,9 @@ body.hide-global-nav nav:first-of-type {
   padding-bottom: 10px;
 }
 
+/* ícone da moeda inline no ticker */
+.coin-inline{
+  vertical-align: -2px;
+  margin: 0 4px;
+  display: inline-block;
+}

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Mascot from "../components/Mascot";
 import CoinCounter from "../components/CoinCounter";
 import ProgressBar from "../components/ProgressBar";
-import { getState, setState } from "../lib/storage";
+import { getState } from "../lib/storage";
 import { levelToLabel } from "../state/levels";
 import NivelamentoPopup from "../components/NivelamentoPopup";
 import "../NivelamentoPopup.css";
@@ -13,14 +13,13 @@ import "../styles.css";
 export default function Home() {
   const s = getState();
   const name = s.user?.name || "aluno(a)";
-  const level = s.level ?? "beginner"; // fallback seguro
+  const level = s.level ?? "beginner";
   const levelLabel = levelToLabel(level);
   const xpToNext = 100;
   const currentXP = s.xp ?? 0;
   const pct = Math.min(100, Math.round(((currentXP % xpToNext) / xpToNext) * 100));
-  const hasLevel = s.level !== "indefinido";
 
-  // popup de nivelamento (overlay, sem interromper a página)
+  // Popup de nivelamento (overlay)
   const [showPopup, setShowPopup] = useState(false);
   useEffect(() => {
     const username = s.user?.name || "demo";
@@ -28,7 +27,7 @@ export default function Home() {
     if (!testeFeito && !s.levelTestDone) setShowPopup(true);
   }, []); // eslint-disable-line
 
-  // missões destaque (demo)
+  // Missões destaque (demo)
   const featured = useMemo(
     () => [
       { id: "loops",   title: "Laços & Loops",    tag: "Básico",     xp: 20, to: "/missions?m=loops" },
@@ -38,64 +37,9 @@ export default function Home() {
     []
   );
 
-  // feed (demo)
-  const recent = s.recent || [
-    { t: "Concluiu 'Tipos Primitivos'", when: "há 1h" },
-    { t: "Ganhou 30 XP", when: "há 1h" },
-    { t: "Abriu a missão 'Laços & Loops'", when: "ontem" },
-  ];
-
-  // ações
-  function claimDaily() {
-    if (s.dailyClaimed) return;
-    setState({ coins: (s.coins ?? 0) + 25, dailyClaimed: true });
-    spawnConfetti();
-  }
-
-  // confetti simples
-  function spawnConfetti() {
-    const root = document.body;
-    for (let i = 0; i < 24; i++) {
-      const el = document.createElement("i");
-      el.className = "confetti";
-      el.style.left = Math.random() * 100 + "vw";
-      el.style.animationDelay = Math.random() * 0.25 + "s";
-      root.appendChild(el);
-      setTimeout(() => el.remove(), 1400);
-    }
-  }
-
   return (
     <div className="home-wrap">
-      {/* TOPBAR fixa */}
-      <nav
-        className="topbar"
-        style={{
-          position: "sticky",
-          top: 0,
-          zIndex: 50,
-          display: "flex",
-          gap: 12,
-          alignItems: "center",
-          padding: "10px 16px",
-          background: "rgba(6,24,16,.6)",
-          backdropFilter: "blur(8px)",
-          borderBottom: "1px solid rgba(124,58,237,.25)",
-          borderRadius: 12,
-          marginBottom: 12,
-        }}
-      >
-        <Link to="/home" className="btn btn-ghost">Início</Link>
-        <Link to="/missions" className="btn btn-ghost">Missões</Link>
-        <Link to="/shop" className="btn btn-ghost">Loja</Link>
-        <Link to="/profile" className="btn btn-ghost">Perfil</Link>
-        <Link to="/leveltest" className="btn btn-ghost">Teste</Link>
-        <div style={{ marginLeft: "auto", opacity: .9 }} className="small">
-          Usuário: <b>{name}</b> · <CoinCounter coins={s.coins ?? 0} />
-        </div>
-      </nav>
-
-      {/* HERO */}
+      {/* ===== HERO ===== */}
       <section className="card hero-card">
         <div className="hero-left">
           <h1 className="hero-title">
@@ -103,11 +47,11 @@ export default function Home() {
           </h1>
           <p className="hero-sub">Aprender Java nunca foi tão divertido! ✨</p>
 
-<div className="hero-cta-row">
-  <Link className="btn btn-primary btn-lg" to="/missions">
-    Começar a jogar
-  </Link>
-</div>
+          <div className="hero-cta-row">
+            <Link className="btn btn-primary btn-lg" to="/missions">
+              Começar a jogar
+            </Link>
+          </div>
 
           <div className="hero-progress">
             <span className="label">Rumo ao próximo nível</span>
@@ -129,7 +73,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* GRID PRINCIPAL */}
+      {/* ===== GRID PRINCIPAL ===== */}
       <section className="home-grid">
         {/* Continuar */}
         <div className="card continue-card">
@@ -137,17 +81,7 @@ export default function Home() {
             <h3>Continuar de onde parou</h3>
             <Link to="/missions" className="small">Ver todas →</Link>
           </div>
-
-          <Link to="/missions" className="continue-body">
-            <div className="continue-info">
-              <div className="badge">Missão sugerida</div>
-              <b>Variáveis & Tipos</b>
-              <span className="small">Ganhe +15 XP</span>
-            </div>
-            <div className="continue-xp">
-              <ProgressBar value={(pct + 20) % 100} />
-            </div>
-          </Link>
+          {/* Mantido simples: sem “Missão sugerida” */}
         </div>
 
         {/* Missões em destaque */}
@@ -165,33 +99,25 @@ export default function Home() {
             ))}
           </div>
         </div>
-
-        {/* Feed */}
-        <div className="card feed-card">
-          <h3>Atividade recente</h3>
-          <ul className="feed">
-            {recent.map((r, i) => (
-              <li key={i}>
-                <span className="dot" />
-                <div>
-                  <b>{r.t}</b>
-                  <div className="small">{r.when}</div>
-                </div>
-              </li>
-            ))}
-          </ul>
-        </div>
       </section>
 
-      {/* ticker divertido */}
+      {/* ===== TICKER ===== */}
       <div className="ticker">
         <div className="track">
-          <span>💡 Dica: pratique todos os dias · 🏆 Complete missões para ganhar XP · 🪙 Troque JavaCoins por skins · </span>
-          <span>💡 Dica: pratique todos os dias · 🏆 Complete missões para ganhar XP · 🪙 Troque JavaCoins por skins · </span>
+          <span>
+            💡 Dica: pratique todos os dias · 🏆 Complete missões para ganhar XP ·{" "}
+            <img src="/assets/coin.png" alt="JavaCoin" width="14" height="14" className="coin-inline" />
+            Troque JavaCoins por skins ·{" "}
+          </span>
+          <span>
+            💡 Dica: pratique todos os dias · 🏆 Complete missões para ganhar XP ·{" "}
+            <img src="/assets/coin.png" alt="JavaCoin" width="14" height="14" className="coin-inline" />
+            Troque JavaCoins por skins ·{" "}
+          </span>
         </div>
       </div>
 
-      {/* Popup de nivelamento como overlay */}
+      {/* Popup de nivelamento */}
       {showPopup && <NivelamentoPopup user={name} onClose={() => setShowPopup(false)} />}
     </div>
   );
