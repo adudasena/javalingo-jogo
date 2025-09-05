@@ -19,7 +19,6 @@ export default function Home() {
   const currentXP = s.xp ?? 0;
   const pct = Math.min(100, Math.round(((currentXP % xpToNext) / xpToNext) * 100));
 
-  // Popup de nivelamento (overlay)
   const [showPopup, setShowPopup] = useState(false);
   useEffect(() => {
     const username = s.user?.name || "demo";
@@ -27,7 +26,6 @@ export default function Home() {
     if (!testeFeito && !s.levelTestDone) setShowPopup(true);
   }, []); // eslint-disable-line
 
-  // Missões destaque (demo)
   const featured = useMemo(
     () => [
       { id: "loops",   title: "Laços & Loops",    tag: "Básico",     xp: 20, to: "/missions?m=loops" },
@@ -39,7 +37,9 @@ export default function Home() {
 
   return (
     <div className="home-wrap">
-      {/* ===== HERO ===== */}
+      {/* REMOVIDO: nav/topbar local para não duplicar o menu */}
+
+      {/* HERO */}
       <section className="card hero-card">
         <div className="hero-left">
           <h1 className="hero-title">
@@ -73,7 +73,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== GRID PRINCIPAL ===== */}
+      {/* GRID PRINCIPAL */}
       <section className="home-grid">
         {/* Continuar */}
         <div className="card continue-card">
@@ -81,7 +81,7 @@ export default function Home() {
             <h3>Continuar de onde parou</h3>
             <Link to="/missions" className="small">Ver todas →</Link>
           </div>
-          {/* Mantido simples: sem “Missão sugerida” */}
+          {/* sem "Missão sugerida" */}
         </div>
 
         {/* Missões em destaque */}
@@ -101,7 +101,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ===== TICKER ===== */}
+      {/* ticker */}
       <div className="ticker">
         <div className="track">
           <span>

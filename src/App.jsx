@@ -34,7 +34,6 @@ export default function App() {
           <div className="header-inner">
             <nav className="nav">
               <NavLink to="/home">Início</NavLink>
-              <NavLink to="/leveltest">Teste</NavLink>
               <NavLink to="/missions">Jogar</NavLink>
               <NavLink to="/shop">Loja</NavLink>
               <NavLink to="/profile">Perfil</NavLink>
