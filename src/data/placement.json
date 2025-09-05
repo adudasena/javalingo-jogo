@@ -1,0 +1,65 @@
+[
+  {
+    "id": "pl-1",
+    "level": "beginner",
+    "q": "Em lógica, um algoritmo é melhor descrito como:",
+    "options": ["Um código executável", "Um conjunto de passos claros para resolver um problema", "Um erro de compilação", "Um atalho do teclado"],
+    "answerIndex": 1,
+    "xp": 0,
+    "coins": 0
+  },
+  {
+    "id": "pl-2",
+    "level": "beginner",
+    "q": "Se x = 4 e y = 3, qual é o valor lógico de (x > y) E (y > 5)?",
+    "options": ["Verdadeiro", "Falso", "Depende da linguagem", "Não compila"],
+    "answerIndex": 1,
+    "xp": 0,
+    "coins": 0
+  },
+  {
+    "id": "pl-3",
+    "level": "intermediate",
+    "q": "Qual saída mais provável do laço a seguir?\nfor i de 0 até 2: escreva(i)",
+    "options": ["1 2 3", "0 1 2", "0 2 4", "Nada é impresso"],
+    "answerIndex": 1,
+    "xp": 0,
+    "coins": 0
+  },
+  {
+    "id": "pl-4",
+    "level": "intermediate",
+    "q": "Em um vetor v = [10, 20, 30, 40], qual é o valor de v[2] considerando índice começando em 0?",
+    "options": ["10", "20", "30", "40"],
+    "answerIndex": 2,
+    "xp": 0,
+    "coins": 0
+  },
+  {
+    "id": "pl-5",
+    "level": "intermediate",
+    "q": "Considere: SE (nota >= 6) ENTÃO 'Aprovado' SENÃO 'Reprovado'. Qual saída para nota = 5.9?",
+    "options": ["Aprovado", "Reprovado", "Erro de sintaxe", "Nenhuma"],
+    "answerIndex": 1,
+    "xp": 0,
+    "coins": 0
+  },
+  {
+    "id": "pl-6",
+    "level": "advanced",
+    "q": "O que melhor descreve 'complexidade de tempo' de um algoritmo?",
+    "options": ["Quantidade de memória usada", "Crescimento do tempo de execução em função do tamanho da entrada", "Número de linguagens suportadas", "Quantidade de linhas de código"],
+    "answerIndex": 1,
+    "xp": 0,
+    "coins": 0
+  },
+  {
+    "id": "pl-7",
+    "level": "advanced",
+    "q": "No paradigma OO, 'encapsulamento' significa:",
+    "options": ["Herança múltipla de classes", "Separar dados e métodos em arquivos diferentes", "Esconder detalhes internos, expondo apenas o necessário por meio de interfaces/métodos públicos", "Reutilizar código por composição"],
+    "answerIndex": 2,
+    "xp": 0,
+    "coins": 0
+  }
+]

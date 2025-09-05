@@ -13,20 +13,20 @@ export default function TestIntro() {
         <div className="card section-card">
           <h2>Teste de Nivelamento</h2>
           <p className="small">Você já realizou o teste. Resultados aplicados ao seu perfil.</p>
-          <div className="row" style={{display:'flex', gap:10, flexWrap:'wrap'}}>
+          <div className="row" style={{ display: 'flex', gap: 10, flexWrap: 'wrap' }}>
             <a className="btn" href="/missions">Ir para Missões</a>
             <a className="btn btn-ghost" href="/home">Voltar ao Início</a>
           </div>
         </div>
       </div>
-    )
+    );
   }
 
   return (
     <div className="container">
       <div className="card section-card">
         <h2>Teste de Nivelamento</h2>
-        <p className="small">Responda 5 perguntas. No final, definimos seu nível e liberamos níveis iniciais.</p>
+        <p className="small">Responda 7 perguntas. No final, definimos seu nível e liberamos níveis iniciais.</p>
         <ul className="intro-list">
           <li>✔️ 1 pergunta por vez</li>
           <li>✔️ Sem tempo máximo</li>
