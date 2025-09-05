@@ -1,3 +1,4 @@
+// src/pages/Profile.jsx
 import React, { useMemo, useState } from "react";
 import Mascot from "../components/Mascot";
 import ProgressBar from "../components/ProgressBar";
@@ -50,13 +51,6 @@ export default function Profile() {
     setActiveSkin(next);
   }
 
-  // ---- interações demo (substitua por API quando tiver) ----
-  function claimDaily() {
-    if (s.dailyClaimed) return;
-    setState({ coins: coins + 25, dailyClaimed: true });
-    confetti();
-  }
-
   // ---- sessão ----
   function logout() {
     setState({ user: null });
@@ -67,19 +61,6 @@ export default function Profile() {
     location.href = "/";
   }
 
-  // ---- confetti simples ----
-  function confetti() {
-    const root = document.body;
-    for (let i = 0; i < 24; i++) {
-      const el = document.createElement("i");
-      el.className = "confetti";
-      el.style.left = Math.random() * 100 + "vw";
-      el.style.animationDelay = Math.random() * 0.25 + "s";
-      root.appendChild(el);
-      setTimeout(() => el.remove(), 1400);
-    }
-  }
-
   // ---- conquistas/atividade demo ----
   const achievements = [
     { id: "first_steps", label: "Primeiros Passos", unlocked: currentXP >= 10 },
@@ -88,12 +69,6 @@ export default function Profile() {
     { id: "coins500", label: "500 JavaCoins", unlocked: coins >= 500 },
     { id: "missions10", label: "10 missões", unlocked: missionsDone >= 10 },
     { id: "quiz_fast", label: "Relâmpago (quiz)", unlocked: false },
-  ];
-
-  const recent = s.recent || [
-    { t: "Concluiu Missão 1", when: "há 2h" },
-    { t: "Ganhou 30 XP", when: "há 2h" },
-    { t: "Equipou skin Javali Clássico", when: "ontem" },
   ];
 
   return (
@@ -136,12 +111,6 @@ export default function Profile() {
             <button className="btn btn-primary" onClick={() => setShowEdit(true)}>
               Editar perfil
             </button>
-            <button className="btn btn-ghost" onClick={claimDaily} disabled={s.dailyClaimed}>
-              {s.dailyClaimed ? "Recompensa diária coletada" : "Coletar diária (+25🪙)"}
-            </button>
-            <button className="btn btn-ghost" onClick={() => addXPdemo(20)}>
-              +20 XP (demo)
-            </button>
           </div>
         </div>
 
@@ -151,8 +120,7 @@ export default function Profile() {
             <svg className="ring" viewBox="0 0 120 120">
               <circle cx="60" cy="60" r="52" className="ring-bg" />
               <circle
-                cx="60"
-                cy="60"
+                cx="60" cy="60"
                 r="52"
                 className="ring-fg"
                 style={{
@@ -173,17 +141,8 @@ export default function Profile() {
         </div>
       </div>
 
-      {/* GRID: Quests / Conquistas / Atividade */}
+      {/* SOMENTE CONQUISTAS */}
       <div className="grid-3">
-        <div className="card section-card">
-          <h3>Quests do dia</h3>
-          <ul className="quests">
-            <Quest label="Jogar 1 missão" done={missionsDone > 0} reward="+10 XP" />
-            <Quest label="Acertar 5 respostas seguidas" done={false} reward="+20 XP" />
-            <Quest label="Voltar amanhã" done={false} reward="+Streak" />
-          </ul>
-        </div>
-
         <div className="card section-card">
           <h3>Conquistas</h3>
           <div className="badges-grid">
@@ -194,21 +153,6 @@ export default function Profile() {
               </div>
             ))}
           </div>
-        </div>
-
-        <div className="card section-card">
-          <h3>Atividade recente</h3>
-          <ul className="timeline">
-            {recent.map((r, i) => (
-              <li key={i}>
-                <span className="dot" />
-                <div>
-                  <b>{r.t}</b>
-                  <div className="small">{r.when}</div>
-                </div>
-              </li>
-            ))}
-          </ul>
         </div>
       </div>
 
@@ -221,6 +165,7 @@ export default function Profile() {
               navigator.clipboard.writeText(`${name} chegou ao nível ${level} no JavaLingo!`)
             }
           >
+            Compartilhar
           </button>
         </div>
         <div className="right" style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
@@ -270,17 +215,5 @@ export default function Profile() {
         </div>
       )}
     </div>
-  );
-}
-
-function Quest({ label, done, reward }) {
-  return (
-    <li className={`quest ${done ? "done" : ""}`}>
-      <span className="check">{done ? "✅" : "⬜"}</span>
-      <div className="q-body">
-        <b>{label}</b>
-        <span className="small">{reward}</span>
-      </div>
-    </li>
   );
 }
