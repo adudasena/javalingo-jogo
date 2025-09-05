@@ -172,35 +172,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Painel de Progresso */}
-        <div className="card progress-card">
-          <h3>Seu progresso</h3>
-          <ul className="progress-list">
-            <li><span className="label">Nível</span><b>{levelLabel}</b></li>
-            {hasLevel && (
-              <li className="row">
-                <span className="label">XP</span>
-                <div className="grow">
-                  <ProgressBar value={pct} />
-                  <span className="small">{currentXP} / {Math.ceil(currentXP / 100) * 100} XP</span>
-                </div>
-              </li>
-            )}
-            <li className="row">
-              <span className="label">JavaCoins</span>
-              <CoinCounter coins={s.coins ?? 0} />
-            </li>
-            <li className="row">
-              <span className="label">Ações</span>
-              <div className="actions">
-                <Link className="btn btn-accent" to="/missions">Jogar</Link>
-                <Link className="btn btn-ghost" to="/shop">Loja</Link>
-                <Link className="btn btn-ghost" to="/profile">Perfil</Link>
-              </div>
-            </li>
-          </ul>
-        </div>
-
         {/* Feed */}
         <div className="card feed-card">
           <h3>Atividade recente</h3>

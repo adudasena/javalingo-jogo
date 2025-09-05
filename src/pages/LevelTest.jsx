@@ -36,11 +36,11 @@ function finish() {
   let startLevel = 1;
 
   if (level === "intermediate") {
-    end = 11;
-    startLevel = 11;
+    end = 10;
+    startLevel = 10;
     alert("Você pode praticar até o nível 10 (iniciante). Seu nível inicial é o 11 (intermediário).");
   } else if (level === "advanced") {
-    end = 31;
+    end = 32;
     startLevel = 32;
     alert("Você pode praticar até o nível 30 (intermediário). Seu nível inicial é o 31 (avançado).");
   } else {

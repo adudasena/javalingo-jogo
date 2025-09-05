@@ -56,12 +56,6 @@ export default function Profile() {
     setState({ coins: coins + 25, dailyClaimed: true });
     confetti();
   }
-  function addXPdemo(val = 20) {
-    const beforeLevel = Math.floor(currentXP / xpToNext) + 1;
-    setState({ xp: currentXP + val });
-    const afterLevel = Math.floor((currentXP + val) / xpToNext) + 1;
-    if (afterLevel > beforeLevel) confetti();
-  }
 
   // ---- sessão ----
   function logout() {
@@ -91,7 +85,7 @@ export default function Profile() {
     { id: "first_steps", label: "Primeiros Passos", unlocked: currentXP >= 10 },
     { id: "streak3", label: "Streak 3 dias", unlocked: streak >= 3 },
     { id: "lvl5", label: "Nível 5", unlocked: level >= 5 },
-    { id: "coins500", label: "500 moedas", unlocked: coins >= 500 },
+    { id: "coins500", label: "500 JavaCoins", unlocked: coins >= 500 },
     { id: "missions10", label: "10 missões", unlocked: missionsDone >= 10 },
     { id: "quiz_fast", label: "Relâmpago (quiz)", unlocked: false },
   ];
@@ -120,12 +114,8 @@ export default function Profile() {
 
           <div className="stats-grid">
             <div className="stat">
-              <span className="label">XP</span>
-              <strong>{currentXP}</strong>
-            </div>
-            <div className="stat">
-              <span className="label">Moedas</span>
-              <strong>🪙 {coins}</strong>
+              <span className="label">JavaCoins</span>
+              <strong> !!! {coins}</strong>
             </div>
             <div className="stat">
               <span className="label">Streak</span>
