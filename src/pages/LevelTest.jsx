@@ -40,36 +40,47 @@ export default function LevelTest() {
     else finish();
   }
 
-  function finish() {
-    // 0–2 iniciante, 3–5 intermediário, 6–7 avançado
-    let level = "beginner";
-    if (score >= 6) level = "advanced";
-    else if (score >= 3) level = "intermediate";
+function finish() {
+  // 0–2 iniciante, 3–5 intermediário, 6–7 avançado
+  let level = "beginner";
+  if (score >= 6) level = "advanced";
+  else if (score >= 3) level = "intermediate";
 
-    setState({ ...s, level, levelTestDone: true });
+  const user = s?.user?.name || "demo";
 
-    const user = s?.user?.name || "demo";
-    const end = level === "beginner" ? 10 : level === "intermediate" ? 30 : 50;
+  // use LET, não CONST
+  let end = 1;
+  let startLevel = 1;
 
-    // ✅ solução imediata: marcar como concluídos para liberar o acesso
-    for (let n = 1; n <= end; n++) {
-      try {
-        completeLevel(n, user);
-      } catch (e) {
-        console.warn("completeLevel falhou no nível", n, e);
-      }
-    }
-
-    if (level === "beginner") {
-      alert("Seu nível inicial é o 1 (iniciante). Você pode praticar até o nível 10.");
-    } else if (level === "intermediate") {
-      alert("Você pode praticar até o nível 30 (intermediário). Seu nível inicial é o 11.");
-    } else {
-      alert("Você pode praticar até o nível 50 (avançado). Seu nível inicial é o 31.");
-    }
-
-    nav("/home");
+  if (level === "intermediate") {
+    // completa ATÉ o 10 -> abre o 11 sem ✓ (porque completeLevel(10) libera o 11)
+    end = 10;
+    startLevel = 11;
+    alert("Você pode praticar até o nível 10 (iniciante). Seu nível inicial é o 11 (intermediário).");
+  } else if (level === "advanced") {
+    // completa ATÉ o 30 -> abre o 31 sem ✓
+    end = 30;
+    startLevel = 31;
+    alert("Você pode praticar até o nível 30 (intermediário). Seu nível inicial é o 31 (avançado).");
+  } else {
+    end = 1;
+    startLevel = 1;
+    alert("Seu nível inicial é o 1 (iniciante). Treine para evoluir!");
   }
+
+  // libera sequencialmente até 'end'
+  for (let n = 1; n <= end; n++) {
+    try {
+      completeLevel(n, user);
+    } catch (e) {
+      console.warn("completeLevel falhou no nível", n, e);
+      break;
+    }
+  }
+
+  setState({ ...s, level, levelTestDone: true });
+  nav("/home");
+}
 
   if (!qs.length) {
     return (

@@ -1,6 +1,6 @@
-import React, { Suspense, lazy } from "react";
+// src/App.jsx
+import React, { Suspense, lazy, useEffect, useState } from "react";
 import { Routes, Route, Navigate, NavLink } from "react-router-dom";
-
 import { getState } from "./lib/storage";
 import BackgroundFX from "./components/BackgroundFX";
 
@@ -10,9 +10,24 @@ const LevelTest = lazy(() => import("./pages/LevelTest"));
 const TestIntro = lazy(() => import("./pages/TestIntro"));
 const Quiz      = lazy(() => import("./pages/Quiz"));
 const Shop      = lazy(() => import("./pages/Shop"));
-const Profile   = lazy(() => import("./pages/Profile.jsx")); // <-- .jsx explícito
+const Profile   = lazy(() => import("./pages/Profile.jsx"));
 const Missions  = lazy(() => import("./pages/Missions"));
 const Signup    = lazy(() => import("./pages/Signup"));
+
+// Hook reativo para refletir login/logout sem recarregar a página
+function useAuthLive() {
+  const [isAuth, setIsAuth] = useState(Boolean(getState().user));
+  useEffect(() => {
+    const update = () => setIsAuth(Boolean(getState().user));
+    window.addEventListener("javalingo:state", update); // mesma aba
+    window.addEventListener("storage", update);         // outras abas
+    return () => {
+      window.removeEventListener("javalingo:state", update);
+      window.removeEventListener("storage", update);
+    };
+  }, []);
+  return isAuth;
+}
 
 function Footer() {
   return (
@@ -23,7 +38,7 @@ function Footer() {
 }
 
 export default function App() {
-  const isAuth = Boolean(getState().user);
+  const isAuth = useAuthLive(); // <<< usa o estado ao vivo
 
   return (
     <div className="page">

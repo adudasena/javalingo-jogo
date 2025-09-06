@@ -551,3 +551,130 @@ body.hide-global-nav nav:first-of-type {
   margin: 0 4px;
   display: inline-block;
 }
+
+/* --- coin no perfil --- */
+.stat-value{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.coin-icon{
+  width: 22px;      /* ajuste fino se quiser maior/menor */
+  height: 22px;
+  display: inline-block;
+  image-rendering: -webkit-optimize-contrast;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,.25));
+}
+
+/* --- anel do mascote (Profile) MAIOR --- */
+.avatar-ring{
+  position: relative;
+  width: 220px;      /* antes 180px */
+  height: 220px;     /* antes 180px */
+  display: grid;
+  place-items: center;
+}
+
+.avatar-ring .ring{ position:absolute; inset:0; transform: rotate(-90deg); }
+
+/* aumentar espessura do traço */
+.ring-bg{ fill:none; stroke: rgba(255,255,255,.15); stroke-width: 14; } /* antes 10 */
+.ring-fg{
+  fill:none; stroke: var(--accent); stroke-width: 14;  /* antes 10 */
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 14px rgba(124,58,237,.45));
+  transition: stroke-dasharray .6s ease;
+}
+
+/* valor do stat com ícone */
+.stat-value{
+  display:flex; align-items:center; gap:8px;
+  font-weight:900; font-size:18px;
+}
+.coin-icon{
+  width:22px; height:22px; display:inline-block;
+  image-rendering:-webkit-optimize-contrast;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,.25));
+}
+
+/* anel do mascote maior */
+.avatar-ring{ width:220px; height:220px; } /* se quiser maior, 240px */
+.ring-bg{ stroke-width:14; }               /* se quiser mais grosso, 16 */
+.ring-fg{ stroke-width:14; }
+
+/* --- coin no perfil --- */
+.stat-value{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.coin-icon{
+  width: 22px;      /* ajuste fino se quiser maior/menor */
+  height: 22px;
+  display: inline-block;
+  image-rendering: -webkit-optimize-contrast;
+  filter: drop-shadow(0 0 6px rgba(0,0,0,.25));
+}
+
+/* --- anel do mascote (Profile) MAIOR --- */
+.avatar-ring{
+  position: relative;
+  width: 220px;      /* antes 180px */
+  height: 220px;     /* antes 180px */
+  display: grid;
+  place-items: center;
+}
+
+.avatar-ring .ring{ position:absolute; inset:0; transform: rotate(-90deg); }
+
+/* aumentar espessura do traço */
+.ring-bg{ fill:none; stroke: rgba(255,255,255,.15); stroke-width: 14; } /* antes 10 */
+.ring-fg{
+  fill:none; stroke: var(--accent); stroke-width: 14;  /* antes 10 */
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 14px rgba(124,58,237,.45));
+  transition: stroke-dasharray .6s ease;
+}
+:root{
+  --ring-size: 260px;    /* tamanho total do bloco (↑ pra maior) */
+  --ring-inset: 14px;    /* folga interna entre anel e mascote */
+  --ring-stroke: 16;     /* espessura do traço do anel */
+  --ring-alpha: .35;     /* transparência do roxo (menor = mais transparente) */
+  --ring-shadow-alpha: .20; /* transparência do brilho */
+}
+
+.avatar-ring{
+  position: relative;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  display: grid;
+  place-items: center;
+}
+
+.avatar-ring .ring{
+  position:absolute;
+  inset: var(--ring-inset);
+  transform: rotate(-90deg);
+  pointer-events: none;
+}
+
+.ring-bg{
+  fill:none;
+  stroke: rgba(255,255,255,.10);
+  stroke-width: var(--ring-stroke);
+}
+
+.ring-fg{
+  fill:none;
+  stroke: rgba(124,58,237,var(--ring-alpha)); /* roxo mais transparente */
+  stroke-width: var(--ring-stroke);
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 14px rgba(124,58,237,var(--ring-shadow-alpha)));
+  transition: stroke-dasharray .6s ease, stroke-dashoffset .6s ease;
+}
